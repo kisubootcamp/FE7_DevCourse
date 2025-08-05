@@ -1,0 +1,25 @@
+<!-- !누르고 tab키 누르면 document 기본양식 생성됨 (emmet) -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./01.js"></script> <!-- 여기 스크립트 파일 넣으면 HTML 파싱이 늦어짐. 그래서 body태그 끝나기 직전에 스크립트 작성하는게 가장 고전적이고 오래된 방식 -->
+  </head>
+  <body>
+    <script>
+      // 내부 스크립트
+      console.log("Hello, World!");
+    </script>
+
+    <!-- 외부 스크립트 -->
+    <script src="./01.js"></script>
+
+    <!--
+			자바스크립트가 웹브라우저에서 실행되는 방식?
+			html 파일 해석해서 해ㅔ석된 내용을 웹브라우저에 보여줌.
+			어떤 과정을 거치냐?? 1번부터 마지막줄까지 순차적으로 해석
+		-->
+		</body>
+</html>
