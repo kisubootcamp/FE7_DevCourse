@@ -1,0 +1,2 @@
+const MAX_LEVEL = 10;
+MAX_LEVEL = 20;
