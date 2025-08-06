@@ -1,0 +1,190 @@
+@font-face {
+    font-family: 'Giants-Inline';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Giants-Inline.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    margin: 0 auto; 
+    box-sizing: border-box;
+    font-family: 'Pretendard-Regular';
+}
+
+body{
+    background-color:rgb(255, 253, 246);
+    margin: 4vh 20vh;
+    min-width: 70vw;
+    max-width: 1000px;
+    height: 1000px;
+}
+
+.topNav{
+    margin: 2vh auto;
+    padding: 2vh 2vh;
+    background-color: rgb(164, 106, 217);
+    border-radius: 200px;
+    color: white;
+    box-shadow: 5px 8px rgb(100, 41, 121);
+}
+
+.topNav > div{
+    display: block;
+    text-align: center;
+    width: 20vw;
+    min-width: 25vw;
+}
+
+.rightNav{
+    margin-left:72vw;
+    position: fixed;
+    top: 16vh;
+}
+
+.rightNav div a:hover{
+    background-color: gold;
+}
+
+.rightNav div a{
+    display: block;
+    margin-bottom: 3vh;
+    border-radius: 20px;
+    padding-top: 10px;
+    text-align: center;
+    font-weight: 300;
+    color: black;
+    background-color: rgb(255, 223, 108);
+}
+
+header div a{
+    text-decoration: none; 
+    padding: 5px; 
+    border-radius: 10px;
+    color: white; 
+    background-color: black;
+    margin-left: 10px;
+}
+
+main{
+    padding: 3vw;
+}
+
+main>div{
+    margin-bottom: 3vh;
+    text-align: center;
+}
+
+main div h3{
+    font-family: 'Giants-Inline';
+    font-size: 4em;
+    color: rgb(137, 14, 185);
+}
+
+main div p{
+    margin-top: 1em;
+    font-size: 1.2em;
+}
+
+main div h4{
+    text-align: left;
+    margin-bottom: 1em;
+}
+.stack{
+    width: 20vw;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.stack h4{
+    display: block;
+    text-align: center;
+}
+
+ol{
+    width: 20vw;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+li{
+    margin: 1vh;
+    padding: 0.4vw 1vw;
+    border-radius: 10px;
+    list-style-type: none;
+    text-align: center;
+    width: 15vw;
+    background-color: gold;
+}
+
+li:hover{
+    background-color: orange;
+
+}
+
+li p{
+    display: none;
+}
+
+li:hover p{
+    display: inline;
+    font-size: 0.9em;
+    background-color: orange;
+
+}
+.form{
+    padding: 2vw;
+    text-align: center;
+}
+
+footer p{
+    display: flex; 
+    flex-direction: row-reverse; 
+    font-size: 0.8em; 
+    color: rgb(191, 157, 8);
+}
+
+hr{
+    border-color: rgb(191, 157, 8)
+}
+
+table{
+    border: rgb(127, 101, 7) solid 0.2em; 
+    text-align: center; 
+    width: 25vw;
+    padding: 4vw; 
+    background-color: rgb(255, 251, 227); 
+    border-collapse: collapse;
+}
+
+td{
+    border: rgb(127, 101, 7) solid 0.2em; 
+    padding: 1vw;
+}
+
+td:nth-child(1){
+    background-color:rgb(255, 222, 137);
+    padding: 1vw;
+}
+
+
+input[type="text"]{
+    width: 30vw; 
+    height: 15vw; 
+    margin: 1vw; 
+    padding: 1vw; 
+}
+
+input[type="summit"]{
+    width: 400px; 
+    height: 100px; 
+    margin: 10px; 
+    padding: 10px;
+}
