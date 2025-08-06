@@ -1,12 +1,9 @@
-// 삼항 연산자
-// 표현식 ? 참 : 거짓
+// 비교 연산자
+// 동등(==) 일치(===) 부등(!=) 불일치(!==)
+// > >= < <=
 
-const money = 5000;
-const price = 3000;
+const a = 10;
+const b = "10";
 
-const buyAble = money >= price ? "살 수 있다" : "살 수 없다";
-console.log(buyAble);
-
-const score = 85;
-const grade = score >= 90 ? "A" : score >= 80 ? "B" : score >= 70 ? "C" : "F";
-console.log(grade);
+console.log(a == b); //a의 number 10은 string 10으로 변환 (암묵적 형변환)
+console.log(a === b);

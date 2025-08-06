@@ -1,11 +1,25 @@
-// 논리연산자
-// & AND
-// | and
+// 연습문제
+//1번
+let num = -5;
+const result = num > 0 ? "Positive" : num === 0 ? "Zero" : "Negative";
+console.log(result);
 
-console.log(!10); // 0, false, null, undefined 를 제외하고 모두 true;
-// !10은 0으로 바뀜
-console.log(!10 < 20); // 0 < 20 => true
+//2번
+let a = 10;
+let b = 25;
+let c = 15;
 
-const x = 10;
-// x를 10이 아니고 논리로 나타내고 싶은데..
-console.log(!!x); // 느낌표 2개로 논리형으로 나타낼 수 있음
+const max = a > b ? (a > c ? a : c) : b > c ? b : c;
+console.log(max);
+
+// 3번
+let number = 10;
+console.log(number % 2 === 0 ? "Even" : "Odd");
+
+//4번
+let isLoggedIn = true;
+console.log(isLoggedIn ? "Welcome" : "Please log in");
+
+//5번
+let age = 25;
+console.log(age >= 18 ? "Adult" : "Minor");
