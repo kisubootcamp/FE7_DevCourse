@@ -12,7 +12,9 @@ dist
 dist-ssr
 *.local
 .env*
+eslint.config.mjs
 package-lock.json
+package.json
 
 # Editor directories and files
 .vscode/*
