@@ -1,0 +1,85 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewprot" content="width=device">
+        <title>Document</title>
+        <style>
+            .grid-box{
+                display: grid;
+                width: 500px;
+                height: 500px;
+                grid-template-columns: 100px 100px ;
+                /* grid-template-columns: repeat(3, 100px); */
+                /* grid-template-columns: repeat(3, 1fr); */
+                /* grid-template-columns: repeat(2, 1fr), 2fr; 
+                   grid-template-columns: 1fr 1fr, 2fr; */
+                grid-auto-rows: 100px;
+                grid-auto-rows: 100px;
+                grid-template-rows: 100px 100px ;
+                gap: 10px;
+            }
+            .red{
+                background-color: red;
+                transition: all 1s ease;
+            }
+            .red:hover{
+                
+                animation: animate 5S infinite ;
+                /* transform: scaleY(1.2); */
+                /* transform: matrix(); 여러 속성 각각 한번에*/
+                width: 120%;
+                height: 120%;
+            }
+            .blue{
+                 background-color:blue;
+            }
+            @keyframes animate{
+                0%{
+                    background-color: red;
+                    transform: rotate(0deg);
+                }
+                25%{
+                    background-color: blue;
+                    transform: rotate(360deg);
+                }
+                50%{
+                    background-color: green;
+                }
+                75%{
+                    background-color: black;
+                }
+                /* from, to 사용이 가능*/
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="grid-box">
+            <div class="red">
+
+            </div>
+            <div class="blue">
+
+            </div>
+            <div class="red">
+
+            </div>
+            <div class="blue">
+
+            </div>
+            <div class="red">
+
+            </div>
+            <div class="blue">
+
+            </div>
+            </div>
+            <div class="red">
+
+            </div>
+            <div class="blue">
+
+            </div>
+        </div>
+    </body>
+</html>
