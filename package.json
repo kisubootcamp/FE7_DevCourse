@@ -1,0 +1,23 @@
+{
+  "name": "devcourse",
+  "version": "1.0.0",
+  "description": "PR을 제출할 때는      [FE7_아무개] 2025MMDD_01_과제제출   [FE7_아무개] 2025MMDD_02_과제제출",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddiyooong/FE7_DevCourse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ddiyooong/FE7_DevCourse/issues"
+  },
+  "homepage": "https://github.com/ddiyooong/FE7_DevCourse#readme",
+  "devDependencies": {
+    "eslint": "^9.32.0"
+  }
+}
