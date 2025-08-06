@@ -13,7 +13,6 @@ let c = 42;
 // console.log(a > b && a > c ? "a" : a > b && a < c ? "c" : a < b && b > c ? "b" : a < b && b < c ? "c" : null);
 console.log(a > b && a > c ? "A" :  a < b && b > c ? "B" : "C");
 
-
 // a가 b보다 클 경우 c 보다도 클 경우 가장 큰 최대값은 A
 // a가 b보다 작고 b가 c 보다 클 경우 가장 큰 최댓값은 B
 // a가 b보다 작고 c 보다도 작고 c가 b보다 클 경우 c가 최댓값 
