@@ -28,7 +28,7 @@ for (let i = start; i <= end; i++){
     for (let j = 2; j< i; j++){
         if(i % j === 0) {
             isPrime = false;
-            break;    
+            break;
         }
     }
     if(isPrime){
