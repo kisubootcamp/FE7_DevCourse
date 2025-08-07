@@ -13,7 +13,6 @@ if (score >= 90) {
 } else {
   console.log("F");
 }
-
 // 2. 짝수와 홀수 판별
 const num = 42;
 if (num % 2 === 0) {
