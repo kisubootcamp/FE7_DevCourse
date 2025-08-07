@@ -21,3 +21,4 @@ const ex7 = (10 < 20 && 10 < 15) || 10 < 0 || (true && false && true) || true; /
 const ex8 = !(10 < 20); // true > false
 const ex9 = !10 < 20; // false(0) < 20 > true
 console.log(ex8, ex9);
+
