@@ -13,6 +13,3 @@ const filterScore = score.filter((value) => {
         console.log("1자리 수 홀수 ㅋ")
     }
 })
-
-
-// const 
