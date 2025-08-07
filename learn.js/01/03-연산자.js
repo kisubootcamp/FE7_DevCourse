@@ -4,7 +4,7 @@ x += 10;
 console.log(x); // 30
 
 x -= 5;
-console.log(x); // 25
+console.log(x); // 2
 
 x /= 2;
 console.log(x); // 12.5
