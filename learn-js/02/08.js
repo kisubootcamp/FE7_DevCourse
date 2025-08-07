@@ -22,3 +22,12 @@ const ex9 = !10 < 20;
 // 팁
 const x = 10;
 console.log(!!x); // true
+
+// Git
+// git remote add upstream [주소]
+// git remote -v
+// git branch -r
+// git fetch upstream
+// git switch -c FE7_kisu upstream/FE7_kisu
+// git pull
+
