@@ -12,7 +12,7 @@ for (let i = 0; fibArr.length < n; i++) {
 }
 console.log(fibArr);
 
-// 2. 소수 찾기
+//  2. 소수 찾기
 const start = 1;
 const end = 100;
 const results = [];
