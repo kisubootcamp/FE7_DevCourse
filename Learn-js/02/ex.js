@@ -144,7 +144,7 @@ const xyResult = xx > 10 && yy < 5;
 console.log(xyResult);
 const xzResult = xx > 10 || zz > 3;
 console.log(xzResult);
-const yResult = !yy;
+const yResult = yy !== 0;
 console.log(yResult);
 
 // 3. 사용자 로그인 및 권한 확인
@@ -160,7 +160,7 @@ console.log(mResult);
 const value1 = null,
   value2 = "JS";
 const orResult2 = !!value1 || !!value2;
-const andResult2 = !!value1 && !!value2;
+const andResult2 = !value1 && !value2;
 console.log(orResult2);
 console.log(andResult2);
 
