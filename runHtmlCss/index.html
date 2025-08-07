@@ -1,63 +1,57 @@
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewprot" content="width=device">
-        <title>Document</title>
-        <style>
-            *{
-                margin: 0;
-            }
-            .flex-box{
-                border: black solid 1px;
-                display: flex;
-                gap: 10px;
-                flex-direction: row;
-                align-items: stretch; /*꽉 차게*/
-                justify-content: space-between; /*어디를 기준으로 붙을지?*/
-                /* space-between 왼쪽 오른쪽에 붙고 꽉 차게 자동 간격 */
-                box-sizing: border-box;
-                width: 50dvw;
-                height: 50dvw;
-            }
-            .card{
-                border: black solid 1px;
-                padding: 10px;
-                border-radius: 10px;
-            }
-            .card-header{
-                display: flex;
-                align-items: center;
-                justify-content: space-between
-            }
-            .flex-item{
-                height: 100px;
-                width: 100px;
-            }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewprot" content="width=device" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      .flex-box {
+        border: black solid 1px;
+        display: flex;
+        gap: 10px;
+        flex-direction: row;
+        align-items: stretch; /*꽉 차게*/
+        justify-content: space-between; /*어디를 기준으로 붙을지?*/
+        /* space-between 왼쪽 오른쪽에 붙고 꽉 차게 자동 간격 */
+        box-sizing: border-box;
+        width: 50dvw;
+        height: 50dvw;
+      }
+      .card {
+        border: black solid 1px;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .flex-item {
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-header">
+        <span>어쩌구</span>
+        <h2>안녕요</h2>
+      </div>
+    </div>
 
-        </style>
-    </head> 
-    <body>
-        <div class="card"> 
-            <div class="card-header">
-                <span>어쩌구</span>
-                <h2>안녕요</h2>
-            </div>
-        </div>
-
-        <div class="flex-box">
-            <div class="flex-item" style="background-color: aquamarine;">
-                A
-            </div>
-            <div class="flex-item" style="background-color:aqua; height: 200px;">
-                B
-            </div>
-            <div class="flex-item" style="background-color: aquamarine;">
-                A
-            </div>
-            <div class="flex-item" style="background-color:aqua; height: 200px;">
-                B
-            </div>
-        </div>
-    </body>
-
+    <div class="flex-box">
+      <div class="flex-item" style="background-color: aquamarine">A</div>
+      <div class="flex-item" style="background-color: aqua; height: 200px">
+        B
+      </div>
+      <div class="flex-item" style="background-color: aquamarine">A</div>
+      <div class="flex-item" style="background-color: aqua; height: 200px">
+        B
+      </div>
+    </div>
+  </body>
 </html>
