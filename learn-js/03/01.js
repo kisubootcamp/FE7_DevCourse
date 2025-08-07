@@ -27,7 +27,7 @@ const y = 3;
 const z = 72;
 console.log(x > 10 && y < 5);
 console.log(x > 10 || y > 3);
-console.log(y != 0);
+console.log(y !== 0); // 실무에서는 != , ==는 부정확해서 주로 사용하지 않음 *
 
 // 3번
 /*
@@ -66,4 +66,8 @@ console.log(!(value1 && value2));
 console.log("--5번--");
 const num = 95;
 console.log(num >= 0 && num <= 100);
-console.log(num < 0 && num > 100);
+console.log(num < 0 || num > 100);
+
+// 부록
+console.log(5 + "2"); // + 연산자는 문자열 연산도 가능해서 문자열로 우선 형변환
+console.log(5 - "2"); // - 연산자는 숫자 연산만 가능해서 숫자로 형변환
