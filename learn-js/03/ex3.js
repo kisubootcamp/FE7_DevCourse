@@ -108,12 +108,18 @@ const [startNum, endNum] = [100, 999];
 
 // 암스트롱 수 구하기
 function isArmstrong(num) {
-  const digits = String(num).split("").map(Number);
+  const digits = [];
 
-  //   const sum = digits.reduce((acc, digit) => acc + Math.pow(digit, 3), 0);
-  const sum = 0;
+  let numTemp = num;
+  while (numTemp > 0) {
+    digits.push(numTemp % 10);
+    numTemp = Math.floor(numTemp / 10);
+  }
+
+  // let sum = digits.reduce((acc, digit) => acc + Math.pow(digit, 3), 0);
+  let sum = 0;
   for (let digit of digits) {
-    sum += Math.pow(digit, 3);
+    sum += digit * digit * digit;
   }
 
   return sum === num;
