@@ -24,6 +24,13 @@ do {
 } while (k >= 0);
 console.log(answerWhile);
 
+// 강사님 답
+let reversed = "";
+for (let i = str.length - 1; i >= 0; i--) {
+	reversed += str[i];
+}
+console.log(reversed);
+
 /* 
 
 뭔가 아닌 것 같아서 다시
