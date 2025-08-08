@@ -23,7 +23,7 @@ for (const i of numArr) if (i > 0) hap += i;
 console.log(hap);
 
 //5
-for (let i = 0; i < 16; i++) {
+for (let i = 0; i <= 15; i++) {
   if (i % 2 == 0) console.log(i + " 짝수");
   else console.log(i + " 홀수");
 }
@@ -39,3 +39,8 @@ for (elm of numArr2) {
 const arr = ["a", "b", "c", "d", "e"];
 let stringArr = [];
 for (let i = 0; i < arr.length; i += 2) stringArr.push(arr[i]);
+
+//8
+for (let i = 1; i <= 9; i++) {
+  console.log(`3 * ${i} = ${3 * i}`);
+}
