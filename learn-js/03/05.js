@@ -26,7 +26,30 @@ do {
 //let i = 0;
 while (i <= 9) {
   i++;
-  //if (i===4) break;
-  //if (i%2 === 1) continue;
+  //if (i===4) break; //123
+  if (i % 2 === 1) continue; //홀수제외, 02468 -> 왜 246710이지 :: i++이 앞에 있음
   console.log(i);
 }
+
+// 추가 continue
+// 정의 : 현재 또는 레이블이 지정된 루프의 현재 반복에서
+// 명령문의 실행을 종료하고
+// 반복문의 처음으로 돌아가여 루프문의 다음 코드를 실행
+
+let text = "";
+
+for (let i = 0; i < 10; i++) {
+  if (i === 3) {
+    continue;
+  }
+  text = text + i;
+}
+
+console.log(text);
+// Expected output: "012456789"
+
+// break와의 차이점 ::
+// break -> 반복문 루프를 나감 :: 조건 만족 상관없이 만나면 루프 끝
+// continue -> 반복문 루프의 처음으로 돌아감 :: 조건 만족까지 루프 계속 진행
+// 결론 :: break는 특정 조건에서 멈출 수 있고,
+//     :: continue는 특정 조건을 건너뛰게 함
