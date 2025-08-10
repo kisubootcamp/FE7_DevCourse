@@ -40,16 +40,16 @@ containsNumber([1, 2, 3, 4, 5], 7); // false
 //4
 function isAnagrams(str1, str2) {
   if (str1.length !== str2.length) return console.log(false);
-  let count = {};
+  const count = {};
   for (const str of str1) {
     count[str] = (count[str] || 0) + 1;
   }
-  for (const char of str2) {
-    if (!count[char]) return false; // 없거나 개수가 0이면 false
-    count[char]--;
+  for (const str of str2) {
+    if (!count[str]) return console.log(false);
+    count[str]--;
   }
 
-  return true;
+  return console.log(true);
 }
 //   for (let i = 0; i < str1.length; i++) {
 //     for (let j = 0; j < str2.length; j++) {
