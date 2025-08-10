@@ -60,11 +60,12 @@ const gcd = (num1, num2) => {
   for (let i = 1; i <= num2; i++) {
     if (num2 % i === 0) numArr2.push(i);
   }
-  console.log(numArr1, numArr2);
-  for (let i = numArr1 - 1; i >= 0; i--) {
-    for (let j = numArr2 - 1; j >= 0; j--) {
-      if (numArr1[i] === numArr2[j]) result = numArr1[i];
-      return result;
+  for (let i = numArr1.length - 1; i >= 0; i--) {
+    for (let j = numArr2.length - 1; j >= 0; j--) {
+      if (numArr1[i] === numArr2[j]) {
+        result = numArr1[i];
+        return result;
+      }
     }
   }
 };
