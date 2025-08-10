@@ -44,13 +44,24 @@ for (let i = 0; i <= 15; i++) {
 console.log("=======================");
 
 // 6.
-let temp = -Infinity;
-const numArr2 = [7, 2, 9, 4, 5];
+// let temp = -Infinity;
+// const numArr2 = [7, 2, 9, 4, 5];
 
-for (let i = 0; i < numArr2.length; i++) {
-  if (numArr2[i] > temp) temp = numArr2[i];
+// for (let i = 0; i < numArr2.length; i++) {
+//   if (numArr2[i] > temp) temp = numArr2[i];
+// }
+
+// console.log(temp)
+
+const numArr2 = [7, 2, 9, 4, 5];
+let max = numArr2[0];
+for (const num of numArr2) {
+  if (num > max) {
+    max = num;
+  }
 }
-console.log(temp);
+
+console.log(max);
 
 console.log("=======================");
 
@@ -58,9 +69,16 @@ console.log("=======================");
 const alphabet = ["a", "b", "c", "d", "e"];
 const newArr = [];
 
-for (let i = 0; i < alphabet.length; i++) {
-  if (i % 2 === 0) newArr.push(alphabet[i]);
+// for (let i = 0; i < alphabet.length; i++) {
+//   if (i % 2 === 0) newArr.push(alphabet[i]);
+// }
+
+for (const index in arr) {
+  if (index % 2 === 0) {
+    newArr.push(arr[index]);
+  }
 }
+
 console.log(newArr);
 
 console.log("=======================");
