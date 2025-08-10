@@ -43,3 +43,5 @@ for (let key in obj) {
 for (const f of arr) {
   console.log(f);
 }
+
+//문자열 [] 선택
