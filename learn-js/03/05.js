@@ -190,10 +190,11 @@ console.log(results); // 75
 // - **설명**: 문자열을 끝에서부터 시작하여 차례로 각 문자를 추가하여 새로운 문자열을 만든다
 
 const str = "Hello, World!";
-let reversed;
+let reversed = ""; //빈문자열로 초기화
 
 // 문자열 뒤집기 로직
-for (let i = str.length; i >= 0; i--) {
+for (let i = str.length - 1; i >= 0; i--) {
+  //인덱스 번호이기 때문에 length - 1
   reversed += str[i];
 }
 
