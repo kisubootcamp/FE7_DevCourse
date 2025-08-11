@@ -129,8 +129,8 @@ for (let i = 100; i <= 999; i++) {
   const str = `${i}`;
   let sum = 0;
 
-  for (let j = 0; j < str.length; j++) {
-    sum += str[j] ** 3;
+  for (const num of str) {
+    sum += num ** 3;
   }
 
   if (i === sum) console.log(i);
