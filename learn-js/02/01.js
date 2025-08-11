@@ -32,6 +32,7 @@ console.log(scores[0]); // 90
 // 1.2.2 객체 {}
 // 1.2.2.1 키(key) + 값(value) = 속성(property)
 // 1.2.2.2 키와 값으로 구성된 속성들의 집합
+
 const scoreObj = {
   mathScore: 90,
   engScore: 40,
@@ -55,5 +56,3 @@ function sum() {}
 
 console.log(typeof 10); // number
 console.log(typeof "hello"); // string
-
-

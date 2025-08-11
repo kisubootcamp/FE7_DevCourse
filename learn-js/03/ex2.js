@@ -1,18 +1,18 @@
-// 연습 문제 1
-const score = 85; // 예시 점수
-let grade;
+/*
+[연습문제 - 학점 계산기]
 
-if (score >= 90) {
-  grade = "A";
-} else if (score >= 80) {
-  grade = "B";
-} else if (score >= 70) {
-  grade = "C";
-} else if (score >= 60) {
-  grade = "D";
-} else {
-  grade = "F";
-}
+학생의 점수를 저장하는 score 변수의 값에 따라  
+학점을 출력하는 코드를 작성해주세요.
+
+1. score의 점수가 90점 이상이면 A
+2. score의 점수가 80점 이상이면 B
+3. score의 점수가 70점 이상이면 C
+4. score의 점수가 60점 이상이면 D
+5. score의 점수가 60점 미만이면 F
+*/
+
+const score = 70;
+let grade = "";
 
 console.log(`학점: ${grade}`); // 학점: B
 
@@ -51,25 +51,27 @@ if (!isLoggedIn2) {
 const month = 4; // 예시 월
 
 let season;
+
 switch (month) {
   case 12:
   case 1:
   case 2:
     season = "Winter";
+
     break;
   case 3:
   case 4:
   case 5:
     season = "Spring";
+    kisu;
     break;
   case 6:
   case 7:
   case 8:
     season = "Summer";
-    break;
-  case 9:
-  case 10:
-  case 11:
+
+    console.log("summer");
+
     season = "Fall";
     break;
   default:
