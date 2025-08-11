@@ -92,4 +92,24 @@ console.log("배열에서 두 수의 합", twiceSum([1, 2, 3, 4, 5], 5));
 console.log("배열에서 두 수의 합", twiceSum([1, 2, 3, 4, 5], 9));
 console.log("배열에서 두 수의 합", twiceSum([1, 2, 3, 4, 5], 6));
 
+// 강사님 버전
+function twiceSum2 (arr, findValue) {
+    let pairs = [];
+    let seen = new Set();
+
+    for (const num of arr){
+        const complete = findValue - num;
+        if(seen.has(complete)){
+            pairs.push([complete, num])
+        }
+        seen.add(num)
+        console.log(num, seen)
+    }
+    return pairs;
+}
+
+console.log("배열에서 두 수의 합", twiceSum2([1, 2, 3, 4, 5], 5));
+console.log("배열에서 두 수의 합", twiceSum2([1, 2, 3, 4, 5], 9));
+console.log("배열에서 두 수의 합", twiceSum2([1, 2, 3, 4, 5], 6));
+
 // console.log();

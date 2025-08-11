@@ -139,6 +139,18 @@ console.log("15, 5의 최대 공약수", gcd(15,5)) // 5
 console.log("100, 75의 최대 공약수", gcd(100,75)) // 25
 console.log("18, 24의 최대 공약수", gcd(18,24)) // 6
 
+// 강사님 버전 (재귀함수 버전)
+function gcd2(a, b){
+    if ( b === 0 ) return a;
+    return gcd2(b, a % b);
+}
+
+console.log("56, 98의 최대 공약수", gcd2(56, 98)) // 14
+console.log("101, 10의 최대 공약수", gcd2(101,10)) // 1 
+console.log("15, 5의 최대 공약수", gcd2(15,5)) // 5
+console.log("100, 75의 최대 공약수", gcd2(100,75)) // 25
+console.log("18, 24의 최대 공약수", gcd2(18,24)) // 6
+
 
 // 5. 배열 정렬(버블 정렬)
 
@@ -147,13 +159,13 @@ console.log("18, 24의 최대 공약수", gcd(18,24)) // 6
 function bubbleSort(arr){
     let resultArr = [];
     for(let i =0; i <= arr.length-1; i++){
-        let min = 999;
+        let min = Infinity;
         for(let j = 0; j <= arr.length-1; j++){ 
             if(resultArr.includes((arr[j]))){
                 continue
             }
             if (min > arr[j]) min = arr[j];
-        }
+        } 
         resultArr.push(min)
     }
 
@@ -162,7 +174,22 @@ function bubbleSort(arr){
 
 console.log("bubbleSort 결과값", bubbleSort([5, 3, 8, 1, 2])); // [1, 2, 3, 5, 8]
 
+// 감사님 버전 (버블 정렬)
+function bubbleSort2 (numberArr){
+    for (let i = 0 ; i<=numberArr.length-1; i++){
+        for (let j = 0; i<= numberArr.length-1-i; j++){
+            if(numberArr[i] > numberArr[j+1]){
+                const temp = numberArr[i]
+                numberArr[i] = numberArr[j+1];
+                numberArr[j+1] = temp;
+            }
+        }
+    
+    }
+    return numberArr
+}
 
+console.log(bubbleSort2[5,3,8,1,2])
 // 5에서 시작될 경우 
 // 5 3
 // 5 8
