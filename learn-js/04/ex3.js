@@ -60,10 +60,10 @@ console.log(isPalindromeSentence("No 'x' in Nixon"));                // true
 // 유클리드 호제법
 
 function gcd(n1, n2) {
-    let max = n1;
-    if (n2 > max) max = n2;
+    let min = n1;
+    if (n2 < min) min = n2;
     let gcdn;
-    for (let i = 1; i <= max; i++) {
+    for (let i = 1; i <= min; i++) {
         if (n1 % i === 0 && n2 % i === 0)
             gcdn = i;
     }
