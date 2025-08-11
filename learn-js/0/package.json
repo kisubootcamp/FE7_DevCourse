@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "bench":"vitest bench --run"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}
