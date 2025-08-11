@@ -115,7 +115,7 @@
 
 // 4.
 // const isAnagrams = (str1, str2) => {
-//   if (str1.length !== str2.length) return false;
+//   if (str1.length !== str2.length) return console.log(false);
 
 //   const length = str1.length;
 
@@ -128,7 +128,7 @@
 //   }
 
 //   for (let i = 0; i < length - 1; i++) {
-//     for (let j = i + 1; j < length + 1; j++) {
+//     for (let j = i + 1; j < length; j++) {
 //       if (str3[i] < str3[j]) {
 //         let temp = str3[i];
 //         str3[i] = str3[j];
@@ -152,19 +152,21 @@
 //   return console.log(a === b);
 // };
 
-// isAnagrams('listen', 'silett');
+// isAnagrams('listen', 'silettt');
 
 // 5.
 // const twiceSum = (arr, num) => {
 //   const total = [];
 //   for (let i = 0; i < arr.length - 1; i++) {
 //     for (let j = i + 1; j < arr.length; j++) {
-//       if (i + j === num) total.push([i, j]);
+//       if (arr[i] + arr[j] === num) total.push([arr[i], arr[j]]);
 //     }
 //   }
 //   console.log(total);
 // };
 // twiceSum([1, 2, 3, 4, 5], 5);
+// twiceSum([1, 2, 3, 4, 5], 9);
+// twiceSum([1, 2, 3, 4, 5], 6);
 
 // -------------------------------------------------------------------------
 // -------------------------------------------------------------------------
