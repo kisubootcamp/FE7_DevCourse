@@ -31,24 +31,42 @@ const containsNumber = (array, num) => {
 };
 
 // 4
+
+// const isAnagrams = (str1, str2) => {
+//   if (str1.length !== str2.length) return false;
+
+//   const map = {};
+
+//   for (let i = 0; i < str1.length; i++) {
+//     map[str1[i]] = (map[str1[i]] || 0) + 1;
+//     map[str2[i]] = (map[str2[i]] || 0) + 1;
+//   }
+
+//   for (const key in map) {
+//     if (map[key] !== 2) return false;
+//   }
+
+//   return true;
+// };
+
 const isAnagrams = (str1, str2) => {
   if (str1.length !== str2.length) return false;
 
   const map = {};
 
-  for (let i = 0; i < str1.length; i++) {
-    map[str1[i]] = (map[str1[i]] || 0) + 1;
-    map[str2[i]] = (map[str2[i]] || 0) + 1;
+  for (const char of str1) {
+    map[char] = (map[char] || 0) + 1;
   }
 
-  for (const key in map) {
-    if (map[key] !== 2) return false;
+  for (const char of str2) {
+    if (!map[char]) return false;
+    map[char]--;
   }
 
   return true;
 };
 
-// 5
+// 5 O(n^2)
 const twiceSum = (array, num) => {
   const result = [];
 
