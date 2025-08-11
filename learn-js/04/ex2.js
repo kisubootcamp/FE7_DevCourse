@@ -2,7 +2,7 @@
 
 //1
 function removeChar(str, certainStr) {
-  result = [];
+  result = "";
   for (let i = 0; i < str.length; i++) {
     if (str[i] === certainStr) continue;
     result += str[i];
@@ -23,15 +23,18 @@ function reverseArray(arr) {
 
 reverseArray([1, 2, 3, 4, 5]); // [5, 4, 3, 2, 1]
 
+//간단 풀이
+const reverseArrays = (numArr) => numArr.reverse();
+const reversedNumArr = reverseArrays([1, 2, 3, 4, 5]);
+
 //3
 function containsNumber(arr, num) {
-  let isTrue = false;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === num) {
-      isTrue = true;
+  for (const n of arr) {
+    if (n === num) {
+      return console.log(true);
     }
   }
-  console.log(isTrue);
+  return console.log(false);
 }
 
 containsNumber([1, 2, 3, 4, 5], 5); // true
@@ -51,16 +54,22 @@ function isAnagrams(str1, str2) {
 
   return console.log(true);
 }
-//   for (let i = 0; i < str1.length; i++) {
-//     for (let j = 0; j < str2.length; j++) {
-//       if (str1[i] === str2[j]) {
-//         isIn++;
-//         break;
-//       }
-//     }
-//   }
-//   if (isIn === str1.length) return console.log(true);
-//   else return console.log(false);
+
+//선생님 풀이
+
+function isAnagrams(str1, str2) {
+  if (str1.length !== str2.length) return false;
+  const charCount = {};
+  for (const char of str1) {
+    charCount[char] = (charCount[char] || 0) + 1; //이런 식으로 (charCount[char] || 0) 이거는 있으면 왼쪽 쓰고 없으면 0 쓴다는 뜻
+  }
+  for (const char of str2) {
+    if (!charCount[char]) return false; //대괄호를 이용해서 접근해야 함, charCount.char 하면 속성으로 접근이라 X
+    // !charCount[char] 이건 0이 나오면 false로 판단하기 때문에 반대를 줘서 true로 만들어 걸리도록 한 것
+    charCount[char]--;
+  }
+  return true;
+}
 
 isAnagrams("listen", "silent"); // true
 isAnagrams("fluster", "restful"); // true
@@ -70,7 +79,7 @@ isAnagrams("aaa", "aaaa"); // false
 //5
 function twiceSum(arr, num) {
   let doubleArr = [];
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length - 1; i++) {
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[i] + arr[j] === num) {
         doubleArr.push([arr[i], arr[j]]);
@@ -83,3 +92,18 @@ function twiceSum(arr, num) {
 twiceSum([1, 2, 3, 4, 5], 5); // [[1, 4], [2,3]]
 twiceSum([1, 2, 3, 4, 5], 9); // [[4, 5]]
 twiceSum([1, 2, 3, 4, 5], 6); // [[1, 5], [2,4]]
+
+//간단 풀이
+function twiceSums(numArr, target) {
+  const paris = [];
+  const seen = new Set(); //Set은 중복되는 정수를 제외하는 것
+
+  for (const num of arr) {
+    const completed = target - num;
+    if (seen.has(completed)) {
+      paris.push([completed, num]);
+    }
+    seen.add(num);
+  }
+  return paris;
+}

@@ -6,20 +6,16 @@
 
 const summarizeStr = (str) => {
   let result = "";
-  let start = str[0];
   let count = 1;
-  for (let i = 1; i < str.length; i++) {
-    if (start === str[i]) {
-      count++;
-    } else {
-      result += start;
-      result += count;
+  let start = str[0];
+  for (let i = 1; i <= str.length; i++) {
+    if (start === str[i]) count++;
+    else {
+      result += start + count;
       start = str[i];
       count = 1;
     }
   }
-  result += start;
-  result += count;
   return result;
 };
 
@@ -47,7 +43,24 @@ console.log(isPalindrome("hello")); // false
 console.log(isPalindrome("level")); // true
 console.log(isPalindrome("world")); // false
 
+//선생님 풀이(끝과 끝을 가면서 점점 비교하는 것)
+function isPalindrome(str) {
+  for (let i = 0; i < str.length / 2; i++) {
+    if (str[i] !== str[str.length - 1 - i]) {
+      return false;
+    }
+    return true;
+  }
+}
+
 //3
+function isPalindromeSentence(input) {
+  const cleaned = input.toLowerCase().replace(/[^a-z]/g, ""); //소문자 변환, 그리고 뒤에는 공백이랑 특수문자 지움
+  const reversed = cleaned.split("").reverse().join(""); //문자 쪼개기-> 배열로 바뀜, 반대로 뒤집기, 그리고 다시 합치기
+  return cleaned === reversed;
+}
+
+console.log(isPalindromeSentence("A man, a plan, a canal, Panama!"));
 
 //4
 const gcd = (num1, num2) => {
@@ -71,6 +84,15 @@ const gcd = (num1, num2) => {
 };
 console.log(gcd(12, 18));
 
+//선생님 풀이(유클리드 호제법, Greatest Common Divisor)
+//유클리드 호제법 : 두 자연수 a와 b(a > b)의 최대 공약수는 a를 b로 나눈 나머지 r과 b의 최대 공약수와 같다
+// GCD(a, b) = GCD(b, a mod b)
+function GCD(num1, num2) {
+  if (num2 === 0) return num1;
+  return GCD(num2, num1 % num2);
+}
+console.log(GCD(48, 18));
+
 //5
 const bubbleSort = (arr) => {
   let num = 0;
@@ -87,3 +109,18 @@ const bubbleSort = (arr) => {
 };
 
 console.log(bubbleSort([5, 3, 8, 1, 2])); // [1, 2, 3, 5, 8]
+
+//선생님 풀이
+const bubbleSorts = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        const num = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = num;
+      }
+    }
+  }
+  return arr;
+};
+console.log(bubbleSorts([5, 3, 8, 1, 2])); // [1, 2, 3, 5, 8]
