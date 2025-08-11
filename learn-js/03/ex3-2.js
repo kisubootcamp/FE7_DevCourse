@@ -20,3 +20,19 @@ while (start <= end) {
 	start++;
 }
 console.log(results);
+
+// 강사님 풀이
+for (let number = start; number <= end; number++) {
+	let isPrime = true;
+	// 2부터 자기 자신의 숫자까지 나누기.
+	// 하나라도 나눠지면 소수가 아님.
+	// 나머지가 0이면 나누어졌다는 것
+	for (let divisor = 2; divisor < number; divisor++) {
+		if (number % divisor === 0) {
+			isPrime = false;
+			break;
+		}
+	}
+
+	if (isPrime) isPrime.push(number);
+}
