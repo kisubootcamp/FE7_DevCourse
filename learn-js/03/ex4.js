@@ -9,6 +9,20 @@
 // result = arr.pop();
 // console.log(`피보나치 수열(${n}항):`, result);
 
+//선생님 풀이
+// const n = 10;
+// let a = 0;
+// let b = 1;
+// let tmp;
+// const result = [];
+
+// for (let count = 0; count < n; count++) {
+//   result.push(a);
+//   tmp = a;
+//   a = b;
+//   b = tmp + b;
+// }
+
 //2
 // let start = 1,
 //   end = 100;
@@ -22,6 +36,23 @@
 //   start++;
 // }
 // console.log(results);
+
+//선생님 풀이
+// const primes = [];
+// let start = 2,
+//   end = 100;
+// for (let number = start; number <= end; number++) {
+//   let isPrime = true;
+//   for (let divisor = 2; divisor < number; divisor++) {
+//     if (number % divisor === 0) {
+//       isPrime = false;
+//       break;
+//     }
+//   }
+//   if (isPrime) {
+//     primes.push(number);
+//   }
+// }
 
 //3
 const numbers = [5, 10, 15, 20, 25];
@@ -48,13 +79,27 @@ console.log(`${n}의 팩토리얼:`, factorial);
 //6
 const end = 999;
 for (let start = 100; start <= end; start++) {
-  let h = parseInt(start % 10);
-  let t = parseInt((start % 100) / 10);
   let n = start % 10;
+  let t = ((i - n) / 10) % 10;
+  let h = (i - t * 10 - n) / 100;
   let hap = 0;
   h = h * h * h;
   t = t * t * t;
   n = n * n * n;
   hap = h + t + n;
   if (start === hap) console.log(hap);
+}
+
+// 선생님 풀이
+// 3중 반복문으로 풀이
+// 100 -> 1, 0, 0
+// 150 -> 1, 5, 0
+for (let i = 1; i < 10; i++) {
+  for (let j = 0; j < 10; j++) {
+    for (let k = 0; k < 10; k++) {
+      const sum = i * i * i + j * j * j + k * k * k;
+      const origin = i * 100 + j * 10 + k;
+      if (sum === origin) console.log(origin);
+    }
+  }
 }
