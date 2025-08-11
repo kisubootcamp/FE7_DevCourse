@@ -290,7 +290,7 @@ console.log(`피보나치 수열(${n}항):`, result1);
 // 2. 소수 찾기
 let result2 = [];
 
-for (let i = 2; i <= 100; i++) {
+for (let i = 1; i <= 100; i++) {
   let isPrime = true;
 
   for (let start = 2; start < i; start++) {
@@ -300,7 +300,7 @@ for (let i = 2; i <= 100; i++) {
     }
   }
 
-  if (isPrime) {
+  if (isPrime && i != 1) {
     result2.push(i);
   }
 }
