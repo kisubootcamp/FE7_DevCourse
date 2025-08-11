@@ -185,11 +185,23 @@ console.log(`${n2}의 팩토리얼:`,factorial);
 
 // 3 → 3 * 3 * 3 = 27
 
-for(let i = 100; i <= 999; i++){
-    const first = ((i - i % 100) / 100);
-    const second = ((i % 100 - i % 10) / 10);
-    const third = i % 10;
-    if(i === first ** 3 + second ** 3 + third ** 3){
-        console.log(i);
+// for(let i = 100; i <= 999; i++){
+//     const first = ((i - i % 100) / 100);
+//     const second = ((i % 100 - i % 10) / 10);
+//     const third = i % 10;
+//     if(i === first ** 3 + second ** 3 + third ** 3){
+//         console.log(i);
+//     }
+// }
+
+for(let i = 1; i < 10; i++){
+    for(let j = 0; j < 10; j++){
+        for(let k = 0; k < 10; k++){
+            const original = i * 100 + j * 10 + k;
+            const sum = i ** 3 + j ** 3 + k ** 3;
+            if(original === sum){
+                console.log(original);
+            }
+        }
     }
 }
