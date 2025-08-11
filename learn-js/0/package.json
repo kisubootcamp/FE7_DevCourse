@@ -1,0 +1,24 @@
+{
+  "name": "devcourse",
+  "version": "1.0.0",
+  "description": "PR을 제출할 때는      [FE7_아무개] 2025MMDD_01_과제제출   [FE7_아무개] 2025MMDD_02_과제제출",
+  "main": "index.js",
+  "scripts": {
+    "bench": "vitest bench --run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moming109/FE7_DevCourse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/moming109/FE7_DevCourse/issues"
+  },
+  "homepage": "https://github.com/moming109/FE7_DevCourse#readme",
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}
