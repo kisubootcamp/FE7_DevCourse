@@ -11,22 +11,19 @@ const o3 = "a1b3f2d1";
 const i4 = "aabaa";
 const o4 = "a2b1a2"; // a4b1
 
-function zipStr(str) {
-	let cur = str[0];
-	let count = 1;
+function zipStr(input) {
+	let currentChar = input[0]; // a
+	let count = 1; // 문자의 갯수를 세는 변수
 	let result = "";
 
-	for (let i = 1; i < str.length; i++) {
-		if (str[i] === cur) {
-			count++;
-		} else {
-			result += cur + count;
-			cur = str[i];
+	for (let i = 1; i <= input.length; i++) {
+		if (input[i] === currentChar) count++;
+		else {
+			result += currentChar + count; // a3
+			currentChar = input[i]; //b
 			count = 1;
 		}
 	}
-	// 마지막으로 cur, count 계산됨
-	result += cur + count;
 
 	return result;
 }
@@ -39,7 +36,15 @@ function isPalindrome(str) {
 	for (let i = str.length - 1; i >= 0; i--) {
 		reverseStr += str[i];
 	}
-	return str === reverseStr;
+
+	// 강사님 풀이
+	// 배열의 갯수만큼 안해도 됨. 가운데 기준으로 이전/다음이 같은지만 확인하면 됨
+	for (let i = 0; i < str.length / 2; i++) {
+		if (str[i] !== str[str.length - 1 - i]) {
+			return false;
+		}
+	}
+	return true;
 }
 console.log(isPalindrome("racecar")); // true
 console.log(isPalindrome("hello")); // false
@@ -53,7 +58,13 @@ function isPalindrome2(str) {
 	for (let i = lowerStr.length - 1; i >= 0; i--) {
 		reverseStr += lowerStr[i];
 	}
-	return lowerStr === reverseStr;
+	// return lowerStr === reverseStr;
+
+	// 강사님 풀이
+	// 알파벳만 남기고 싹 지워버리기
+	const cleaned = str.toLowerCase().replaceAll(/[^a-z]/g, ""); // [^a-z]만 남기고
+	const reversed = cleaned.split("").reverse().join("");
+	return cleaned === reversed;
 }
 console.log(isPalindrome2("A man, a plan, a canal, Panama!")); // true
 console.log(isPalindrome2("Was it a car or a cat I saw?")); // true
@@ -86,9 +97,15 @@ const gcd = (a, b) => {
 	// 나머지가 0이 아닌 경우: 작은 수(b)를 새로운 큰 수(a)로, 나머지를 새로운 작은 수(b)로 하여 2단계로 돌아갑니다.
 	// 반복: 나머지가 0이 될 때까지 2단계와 3단계를 반복합니다.
 
-	const r = a % b;
-	if (r === 0) return b;
-	return gcd(b, r);
+	// const r = a % b;
+	// if (r === 0) return b;
+	// return gcd(b, r);
+
+	// 더 짧게 가능
+	//a를 b로 나눈 나머지 r과 b의 최대공약수가 같다.
+	// 이때 나머지가 0이 되면 나누는 수가 최대공약수다
+	if (b === 0) return a;
+	return gcd(b, a % b);
 };
 console.log(gcd(56, 98)); // 14
 console.log(gcd(101, 10)); // 1
@@ -98,23 +115,26 @@ console.log(gcd(18, 24)); // 6
 
 // 주어진 배열을 오름차순으로 정렬하는 함수를 작성하시오.
 const bubbleSort = (arr) => {
-	const bubbleArr = [];
-	let i = 0;
-	do {
-		bubbleArr.push(arr[bubbleArr.length]);
-		for (let index = 0; i < arr.length; index++) {
-			if (i < 1) {
-				if (bubbleArr[i] >= arr[index]) bubbleArr[i] = arr[index];
-				continue;
+	for (let i = 0; i < arr.length; i++) {
+		for (let j = 0; j < arr.length - 1 - i; j++) {
+			if (arr[j] > arr[j + 1]) {
+				const temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
 			}
-			if (bubbleArr[i - 1] < arr[index] && bubbleArr[i] >= arr[index])
-				bubbleArr[i] = arr[index];
 		}
-		i++;
-	} while (bubbleArr.length < arr.length);
-
-	return bubbleArr;
+	}
+	return arr;
 };
-// 이건 접근이 어렵다ㅠㅜ
 
 console.log(bubbleSort([5, 3, 8, 1, 2])); // [1, 2, 3, 5, 8]
+// 좀 어려운 것 같으면은 시각적으로 구현해주는 사이트 참고 https://visualgo.net/
+
+
+function gcd(n, m) {
+	const r = n % m;
+	console.log(r)
+	if (r === 0) return m;
+	return gcd(m, r);
+}
+console.log(gcd(2,5))
