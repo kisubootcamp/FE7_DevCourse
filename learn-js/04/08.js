@@ -55,6 +55,20 @@ isAnagrams("listen", "silent"); // true
 isAnagrams("fluster", "restful"); // true
 isAnagrams("rat", "car"); // false
 isAnagrams("aaa", "aaaa"); // false
+//4-1
+function isAnagrams2(str1, str2) {
+  const charCount = {};
+  for (const char of str1) {
+    charCount[char] = (charCount[char] || 0) + 1;
+  }
+  for (const char of str2) {
+    if (!charCount[char]) return false;
+    charCount[char]--;
+  }
+  return true;
+}
+console.log(isAnagrams2("fluster", "restful")); // true
+console.log(isAnagrams2("rat", "car")); // false
 
 // 5
 function twiceSum(arr, target) {

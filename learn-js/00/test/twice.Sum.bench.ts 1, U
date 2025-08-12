@@ -1,0 +1,17 @@
+
+// 5
+function twiceSum(arr, target) {
+  let answer = [];
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] === target) {
+        answer.push([arr[i], arr[j]]);
+      }
+    }
+  }
+  console.log(answer);
+}
+
+twiceSum([1, 2, 3, 4, 5], 5); // [[1, 4], [2,3]]
+twiceSum([1, 2, 3, 4, 5], 9); // [[4, 5]]
+twiceSum([1, 2, 3, 4, 5], 6); // [[1, 5], [2,4]]
