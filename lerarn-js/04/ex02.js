@@ -32,12 +32,17 @@ function containsNumber(arr, target) {
 // 4. 좀 이따 다시 풀어보기
 function isAnagrams(string1, string2) {
   if (string1.length !== string2.length) return console.log(false);
+
+  const sorted1 = string1.split("").sort().join("");
+  const sorted2 = string2.split("").sort().join("");
+
+  return console.log(sorted1 === sorted2);
 }
 
-isAnagrams("listen", "silent"); // true
-isAnagrams("fluster", "restful"); // true
-isAnagrams("rat", "car"); // false
-isAnagrams("aaa", "aaaa"); // false
+// isAnagrams("listen", "silent"); // true
+// isAnagrams("fluster", "restful"); // true
+// isAnagrams("rat", "car"); // false
+// isAnagrams("aaa", "aaaa"); // false
 
 // 5.
 function twiceSum(arr, target) {
