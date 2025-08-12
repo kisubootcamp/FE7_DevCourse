@@ -34,6 +34,13 @@ for (let i = 0; i < numArr.length; i++) {
 }
 console.log(sum2);
 
+sum2 = 0;
+for (const num of numArr) {
+    if (num > 0) {
+        sum2 += num;
+    }
+}
+console.log(sum2);
 
 /*
 Q5.[연습문제 - 홀짝 구분하기]
@@ -59,7 +66,6 @@ for (let i = 0; i <= 15; i++) {
 }
 
 
-
 //Q6. 주어진 숫자 배열의 최댓값 찾기 
 const numArr2 = [7, 2, 9, 4, 5];
 max = numArr2[0];
@@ -70,6 +76,14 @@ for (let i = 0; i < numArr2.length; i++) {
 }
 console.log(max);
 
+for (const num of numArr2) {
+    if (num > max) {
+        max = num;
+    }
+}
+console.log(max);
+
+
 // Q7. 짝수 인덱스의 요소만 새로운 배열 담기
 // 배열의 .push() 메서드를 사용하세요.
 const arr = ['a', 'b', 'c', 'd', 'e']
@@ -79,6 +93,15 @@ for (let i = 0; i < arr.length; i++) {
         arr2.push(arr[i]);
     }
 }
+console.log(arr2)
+
+arr2 = [];
+for (const index in arr) {
+    if (index % 2 == 0) {
+        arr2.push(arr[index]);
+    }
+}
+console.log(arr2);
 
 // Q8. 구구단 3단 출력하기
 for (let i = 1; i <= 9; i++) {

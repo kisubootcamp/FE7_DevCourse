@@ -1,0 +1,127 @@
+// 강사님 코드
+// Q1. 매개변수를 전달받아서 매개변수의 총 합을 반환하는 덧셈 함수를 만들어주세요.
+// 매개변수의 갯수 제한은 없습니다.
+
+function sum(...numbers) {
+    let result = 0;
+    for (const num of numbers) {
+        result += num;
+    }
+    return result;
+}
+// const sum = (...numbers) => numbers.reduce((sum + cur, 0));
+const result = sum(10, 20, 30, 40);
+console.log(result);
+
+// Q2. 사칙연산을 수행하는 로직을 담은 함수를 구현해주세요.  (매개변수 - 2개) (+, -, *, /)
+// 구현 방법은 자율입니다.
+function calculate(num1, num2, operator) {
+    switch (operator) {
+        case "+":
+            return num1 + num2;
+        case "-":
+            return num1 - num2;
+        case "*":
+            return num1 * num2;
+        case "/":
+            return num1 / num2;
+        default:
+            return "잘못된 연산자를 입력하셨습니다.";
+    }
+}
+console.log(calculate(0.1, 0.2, "+"))
+
+// Q3. 짝수와 홀수 판별하기
+//숫자를 매개변수로 받아서 짝수면 true, 홀수면 false를 반환하는 함수 isEven을 작성하세요.
+//함수를 사용하여 7이 짝수인지 홀수인지 판별하고 결과를 출력하세요.
+function isNums(num) {
+    return num % 2 === 0;
+}
+const isNum = (num) => num % 2 === 0;
+console.log(isNum);
+
+// Q4. 배열의 모든 요소 더하기
+// 배열의 모든 요소의 합을 반환하는 함수를 작성하세요
+function sumArray(...numbers) {
+    console.log(numbers);
+    let result = 0;
+    for (const num of numbers) {
+        result += num;
+    }
+    return result;
+}
+console.log(sumArray([1, 2, 3])); // 6
+
+// Q5. 배열의 최대값 찾기
+// 배열에서 최대값을 찾는 함수를 작성하세요
+function findMax(numbers) {
+    let max = numbers[0];
+    for (const number of numbers) {
+        if (num > max) {
+            max = num;
+        }
+    }
+    return max;
+}
+console.log(findMax([1, 5, 3, 9, 2])); // 9
+
+// Q6. 문자열 반전
+// 주어진 문자열을 반전시켜 반환하는 함수를 작성하세요
+function reverseString(str) {
+    let reversed = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        reversed += str[i];
+    }
+    return reversed;
+}
+console.log(reverseString("hello")); // "olleh"
+
+// Q7. 문자열에서 특정 문자 개수 세기
+// 주어진 문자열에서 특정 문자의 개수를 세는 함수를 작성하세요
+
+function countCharacter(str, char) {
+    let count = 0;
+    for (let i = 0; i< str.length; i++) {
+        if (str[i] === char) count++;
+    }
+    return count;
+}
+console.log(countCharacter("banana", "a"));
+
+// Q8. 팩토리얼 계산하기
+// - 양의 정수를 매개변수로 받아서 그 수의 팩토리얼을 반환하는 함수 `factorial`을 작성하세요.
+// - 함수를 사용하여 5의 팩토리얼을 계산하고 결과를 출력하세요.
+function factorial(c) {
+    let factorial = 1;
+    for (let i = 1; i <= c; i++) {
+        factorial *= i
+    }
+    return factorial;
+}
+console.log(factorial(5));
+
+// 재귀 함수
+// 1. 종료 조건이 있을 것
+// 2. 스스로가 스스로를 호출할 것
+
+// 1부터 n까지의 합
+
+// return sum(5) = 5 + sum(4) = 5 + 4 + sum(3) = 5 + 4 + 3 + sum(2) = 5 + 4 + 3 + 2 + sum(1) = 5 + 4 + 3 + 2 + 1
+function sum(n) {
+    if (n === 1) return 1;
+    return n + sum(n-1);
+}
+console.log(sum(5));
+
+function fac(n) {
+    if (n === 0 || n === 1) return 1;
+    return n * fac(n-1);
+}
+console.log(fac(5));
+
+// Q9. 삼각형 넓이 계산하기
+//삼각형의 밑변과 높이를 매개변수로 받아서 넓이를 반환하는 함수 triangleArea를 작성하세요.
+//함수를 사용하여 밑변이 10이고 높이가 5인 삼각형의 넓이를 계산하고 결과를 출력하세요.
+function triangleArea(base, height) {
+     return base * height / 2;
+}
