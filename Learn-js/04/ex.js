@@ -210,16 +210,10 @@ function strCom(str) {
   return result;
 }
 const i = "aaabbbccc";
-const o = "a3b3c3";
-
 const i2 = "aabbaa";
-const o2 = "a2b2a2";
-
 const i3 = "abbbffd";
-const o3 = "a1b3f2d1";
-
 const i4 = "aabaa";
-const o4 = "a2b1a2"; // a4b1
+
 console.log(strCom(i));
 console.log(strCom(i2));
 console.log(strCom(i3));
@@ -227,7 +221,7 @@ console.log(strCom(i4));
 
 // 2. 팰린드롬 확인하기(쉬운 버전)
 function isPalindrome(str) {
-  for (let i = 0; i < str.length - 1 - i; i++) {
+  for (let i = 0; i < str.length / 2; i++) {
     if (str[i] !== str[str.length - 1 - i]) {
       return false;
     }
@@ -242,7 +236,7 @@ console.log(isPalindrome("world")); // false
 
 // 3. 팰린드롬 확인하기(어려운 버전)
 function isPalindromeSentence(str) {
-  str = str.toLowerCase();
+  str = str.toLowerCase(); // 소문자로 만들어주는 함수 (검색으로 알아봄)
 
   let cleaned = "";
   for (let i = 0; i < str.length; i++) {
@@ -265,16 +259,34 @@ console.log(isPalindromeSentence("Was it a car or a cat I saw?")); // true
 console.log(isPalindromeSentence("Hello, world!")); // false
 console.log(isPalindromeSentence("No 'x' in Nixon")); // true
 
+/* --------------------------------------------------------------------------------- */
+function isPalindromeSentence1(str) {
+  const cleaned = str.toLowerCase().replace(/[^a-z]/g, ""); // 소문자로 바꾼 뒤, 알파벳 지우기
+  const reversed = cleaned.split("").reverse().join(""); // 배열로 쪼개고 역순으로 해서 문자열로 합치기
+  return cleaned === reversed;
+}
+console.log(isPalindromeSentence1("A man, a plan, a canal, Panama!")); // true
+console.log(isPalindromeSentence1("Was it a car or a cat I saw?")); // true
+console.log(isPalindromeSentence1("Hello, world!")); // false
+console.log(isPalindromeSentence1("No 'x' in Nixon")); // true
+
 // 4. 최대 공약수(GCD)
+// 최소 공배수(LCM)는 => a*b/gcd 두 수를 최대 공약수로 나누기
 function gcd(num1, num2) {
   let gcd = 1;
   for (let i = 1; i < (num1 > num2 ? num1 : num2); i++) {
-    if (num1 % i === 0 && num2 % i === 0) {
-      gcd = i;
-    }
+    if (num1 % i === 0 && num2 % i === 0) gcd = i;
   }
   return gcd;
 }
+
+// 간단 버전
+function gcd2(a, b) {
+  let answer = [];
+  if (b === 0) return a;
+  return gcd2(b, a % b);
+}
+
 console.log(gcd(56, 98));
 console.log(gcd(101, 10));
 console.log(gcd(15, 5));
