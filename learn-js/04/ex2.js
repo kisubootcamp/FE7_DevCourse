@@ -65,6 +65,18 @@ function twiceSum(arr, target) {
   return result;
 }
 
+function twiceSums(arr, target) {
+  const pairs = [];
+  const seen = new Set();
+
+  for (const num of arr) {
+    const completed = target - num;
+    if (seen.has(completed)) pairs.push([completed, num]);
+    seen.add(num);
+  }
+  return pairs;
+}
+
 console.log(twiceSum([1, 2, 3, 4, 5], 5));
 console.log(twiceSum([1, 2, 3, 4, 5], 9));
 console.log(twiceSum([1, 2, 3, 4, 5], 6));
