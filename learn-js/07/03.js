@@ -190,9 +190,7 @@ function calculatorFibo(n){
         for (let i = 2; i < n; i++) {
             fiboArr.push((fiboArr[i-1] + fiboArr[i-2])% 1234567)
         }
-        const keyCount = fiboArr.length
-        result = (fiboArr[keyCount-1] + fiboArr[keyCount-2])
-        return result;
+        return fiboArr[n-1] + fiboArr[n-2];
     }
 }
 
