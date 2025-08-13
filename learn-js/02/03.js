@@ -9,11 +9,10 @@ console.log(10 / 5); // 2
 console.log(10 % 5); // 2
 console.log(10 ** 5); // 100000
 
-
 // 연산자 우선순위
 // 소괄호
 console.log(10 + 5 * 2); // 20
 console.log((10 + 5) * 2); // 30
 
 // Decimal.js
-console.log(0.1 * 100000000)
+console.log(0.1 * 100000000);

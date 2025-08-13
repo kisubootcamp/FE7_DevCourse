@@ -1,4 +1,17 @@
 {
+<<<<<<< HEAD
+=======
+  "name": "00",
+  "version": "1.0.0",
+  "main": "00.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+>>>>>>> FE7_kisu
   "devDependencies": {
     "eslint": "^9.32.0"
   }
