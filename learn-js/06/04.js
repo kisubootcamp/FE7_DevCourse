@@ -10,7 +10,6 @@
 // 생성 -> a = function, b = function // TDZ, 일시적 사각 지대
 // 실행 -> a();
 
-/*
 console.log(num);
 let num = 10;
 
@@ -23,9 +22,8 @@ function b() {
 }
 a();
 console.log("c");
-*/
 
-/*
+
 const a = function a() {
     console.log("a");
     function b() {
@@ -35,10 +33,10 @@ const a = function a() {
 }
 
 a();
-var a = function a() {
+var a = function() {
 };
 console.log("c");
-*/
+
 
 // 스코프: 변수에 접근할 수 있는 유효한 범위
 // 함수 스코프: 함수 안에서만 변수에 접근할 수 있는 유효한 범위
@@ -47,12 +45,12 @@ console.log("c");
 
 // TDZ(Temporal Dead Zone), 일시적 사각 지대
 // 변수 쉐도잉(variable Shadowing)
-// 식별자 결정정
+// 식별자 결정
 
 const num = 10;
 function printNum() {
     const uname = "suyeon";
-    // const num = 20;
+    const num = 20;
     console.log(num);
 }
 printNum();

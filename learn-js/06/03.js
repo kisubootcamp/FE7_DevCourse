@@ -20,8 +20,8 @@ function calculator(callback) {
     return () => callback(10, 20); // return () => {}
 }
 
-const cb = calculator((num1, num2) => num1 + num2);
-console.log(cb);
+const plus = calculator((num1, num2) => num1 + num2);
+console.log(plus());
 calculator((num1, num2) => num1 + num2);
 calculator((num1, num2) => num1 - num2);
 calculator((num1, num2) => num1 * num2);
@@ -50,6 +50,7 @@ console.log(greetJohn());
 function getOperation(op) {
     if (op === "add") return (a, b) => a + b;
     else return (a, b) => a - b;
+    // return op === "add" ? (a,b) => a+b : (a,b) => (a-b);
 }
 const add = getOperation("add");
 console.log(add(5,3));
