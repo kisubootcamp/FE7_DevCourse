@@ -179,23 +179,23 @@ console.log(multiply(10, 5)); // 50
 
 // 강사님 프로그래머스 문제 (정답은 맞으나 성능 문제로 인해 실패가 계속 나옴)
 function solution(n) {
-    const answer = fibo(n)
-    return answer;
+    const calculator = calculatorFibo(n)
+    return calculator();
 }
 
-function fibo(n){
+function calculatorFibo(n){
     let result = 0;
     let fiboArr = [0,1]
-
-    for (let i = 2; i < n; i++) {
-        fiboArr.push(fiboArr[i-1] + fiboArr[i-2])
-        console.log(`fiboArr[${i}]`, fiboArr[i]); // 지금 막 채운 인덱스 출력
+    return function fibo(){
+        for (let i = 2; i < n; i++) {
+            fiboArr.push((fiboArr[i-1] + fiboArr[i-2])% 1234567)
+        }
+        const keyCount = fiboArr.length
+        result = (fiboArr[keyCount-1] + fiboArr[keyCount-2])
+        return result;
     }
-    
-    const keyCount = fiboArr.length
-    result = fiboArr[keyCount-1] + fiboArr[keyCount-2]
-    return result
 }
+
 
 console.log("결과", solution(3))
 console.log("결과", solution(5))
