@@ -92,7 +92,6 @@ function createPropertyCounter() {
     return count;
   };
 }
-
 let counter2 = createPropertyCounter();
 console.log(counter2({ a: 1, b: 2 })); // 2
 console.log(counter2({ a: 1 })); // 1
