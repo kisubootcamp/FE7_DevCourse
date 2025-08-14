@@ -34,7 +34,7 @@ function evenOrOdd(num) {
   if (num % 2 === 0) return true;
   else return false;
 }
-console.log(evenOrOdd(7));
+console.log(evenOrOdd(7)); //
 
 // 4. 배열의 모든 요소 더하기
 function sumArray(arr) {
@@ -282,7 +282,6 @@ function gcd(num1, num2) {
 
 // 간단 버전
 function gcd2(a, b) {
-  let answer = [];
   if (b === 0) return a;
   return gcd2(b, a % b);
 }
