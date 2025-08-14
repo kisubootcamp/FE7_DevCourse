@@ -36,11 +36,11 @@ function levelUp(){
     return inner;
 }
 
-// const myLevel = levelUp();
-// console.log(myLevel());
-// console.log(myLevel());
-// console.log(myLevel());
-// console.log(myLevel());
+const myLevel = levelUp();
+console.log(myLevel());
+console.log(myLevel());
+console.log(myLevel());
+console.log(myLevel());
 
 // const myLevelUp = levelUp();
 // let warior = myLevelUp();
@@ -73,7 +73,7 @@ console.log(archer);
 // 데이터 은닉 - 외부에서 데이터에 직접 접근 가능
 // 상태 유지 - 함수 호출 간 변수를 계속 기억
 
-function outer{
+function outer(){
     let count = 0;
     return () => ++count;
 }
