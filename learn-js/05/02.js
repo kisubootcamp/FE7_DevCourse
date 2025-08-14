@@ -28,12 +28,12 @@ var num;
 function num() {
   return 10;
 }
-console.log(num);
+console.log(num); // function: num 함수로 인식
 
 num = 5;
-console.log(num);
+console.log(num); // 5 정수로 인식
 console.log(num()); // 에러
 /*
-num = 5에 의해서 num은 함수가 아니라 5가 되었음.
+num = 5에 의해서 num은 함수가 아니라 변수가 되었음.
 따라서 num is not a function 에러가 발생
 */

@@ -19,7 +19,7 @@ const sayHello2 = function sayHello() {
 
 // 2. 함수의 인자로 전달할 수 있어야 한다.
 // 함수를 매개변수로 받아서 사용하는 함수 => 콜백함수
-// 콜백함수는 매개변수 이름을 callback으로 정의하는 암묵적 룰
+// 콜백함수는 매개변수 이름을 callback 또는 cb로 정의하는 암묵적 룰
 function greet(callback) {
   console.log(callback("jiho"));
 }
