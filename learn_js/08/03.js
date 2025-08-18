@@ -45,24 +45,26 @@ const book = new Book('목적이 이끄는 삶', '릭워렌', 2003);
 console.log(book);
 
 // 5
-function BankAccount(account) {
-  this.account = account;
+function BankAccount(Balance) {
+  let account = Balance;
   this.deposit = function (c) {
-    this.account += c;
-    return `잔액: ${this.account}`;
+    account += c;
+    return `잔액: ${account}`;
   };
   this.withdraw = function (c) {
-    this.account -= c;
-    return `잔액: ${this.account}`;
+    account -= c;
+    return `잔액: ${account}`;
   };
   this.getBalance = function () {
-    return this.account;
+    return account;
   };
 }
 const bank = new BankAccount(0);
 bank.deposit(1000);
 console.log(bank.getBalance());
 bank.withdraw(500);
+console.log(bank.getBalance());
+bank.account = 30000000; //프라이빗하게 설정해놔서 외부에서 값 변경 불가
 console.log(bank.getBalance());
 
 // 6

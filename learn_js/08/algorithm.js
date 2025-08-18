@@ -26,29 +26,28 @@
 // }
 // console.log(stairsGame(5));
 
-function solution(n) {
-  function play(a, b) {
-    // a: 철수의 현재 계단 위치, b: 영희의 현재 계단 위치
-    if (a < 0 || b < 0) a < 0 ? (a = 0) : (b = 0); // 계단이 -값이 되는 것을 방지.
-    if (a >= n && b >= n) {
+function stairGame(n) {
+  function play(cs, yh) {
+    // cs: 철수의 현재 계단 위치, yh: 영희의 현재 계단 위치
+    if (cs < 0 || yh < 0) cs < 0 ? (cs = 0) : (yh = 0); // 계단이 -값이 되는 것을 방지.
+    if (cs >= n && yh >= n) {
       return 0;
     } // 동시 도착
 
-    if (a >= n) {
+    if (cs >= n) {
       return 1;
     } // 철수 도착
 
-    if (b >= n) {
+    if (yh >= n) {
       return 0;
     } // 영희 도착
-
-    const result = play(a + 2, b - 1) + play(a + 1, b + 1) + play(a - 1, b + 2);
+    const result =
+      play(cs + 2, yh - 1) + play(cs + 1, yh + 1) + play(cs - 1, yh + 2);
     // 각각 철수가 이긴 경우 + 비긴 경우 + 영희가 이긴 경우
-
     return result;
   }
   return play(0, 1); // 철수는 0계단, 영희는 1계단에서 시작
 }
 
-const answer = solution(5);
+const answer = stairGame(5); // 목표 계단수를 인자로 전달
 console.log(answer);
