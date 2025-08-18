@@ -4,7 +4,7 @@ function Car(make, model, year) {
     this.make = make;
     this.model = model;
     this.year = this.year;
-    this.drive = function {
+    this.drive = function () {
         return `${this.make}, ${this.model}, ${this.year}}`;
     }
 }
