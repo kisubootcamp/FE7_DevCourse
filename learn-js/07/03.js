@@ -197,3 +197,46 @@ function calculatorFibo(n){
 
 console.log("결과", solution(3))
 console.log("결과", solution(5))
+
+
+
+function chunk(arr, size) {
+    let result = [];
+
+    if (arr.length === 0 ){
+        return result;
+    }  
+    if (size <= 0 ){
+        return arr;
+    }
+
+    for (let i = 0; i < arr.length; i += size) {
+        result.push(arr.slice(i, i + size));
+    }
+
+    return result;
+
+}
+
+const data = [1,2,3,4,5]
+
+const resultData0 = chunk(data, 0)
+const resultData1 = chunk(data, 1)
+const resultData2 = chunk(data, 2)
+const resultData3 = chunk(data, 3)
+const resultData4 = chunk(data, 4)
+const resultData5 = chunk(data, 5)
+const resultData6 = chunk(data, 6)
+
+console.log("Chunk 0 Result = ", resultData0)
+console.log("Chunk 1 Result = ", resultData1)
+console.log("Chunk 2 Result = ", resultData2)
+console.log("Chunk 3 Result = ", resultData3)
+console.log("Chunk 4 Result = ", resultData4)
+console.log("Chunk 5 Result = ", resultData5)
+console.log("Chunk 6 Result = ", resultData6)
+
+const testSize = [1,2,3,4,5,6];
+testSize.forEach((size => {
+	const result = chunk(data,size);
+});
