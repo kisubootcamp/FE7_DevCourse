@@ -12,12 +12,14 @@ function main(){
     console.log(this);
 }
 
+const mainBind = main.bind({name:"sucoding"});
+
 const obj = {
     name: "kim",
-    main: main,
+    main: mainBind,
     smallObj: {
         name: "small",
-        main: main,
+        main: mainBind,
     },
 };
 
