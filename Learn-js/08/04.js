@@ -33,6 +33,7 @@ console.dir(car1.author);
 console.dir(car1.__proto__);
 console.dir(car1.__proto__.drive()); // [[Prototype]] this -> Car.prototype(author와 )
 console.dir(car1.drive()); // [[Prototype]] this -> car1
+
 // 내 입맛대로 정리
 // this는 그 함수 안에 객체를 뜻한다. => 그 주체는 점(.) 왼쪽에 있는 객체
 // 함수 밖에 있는 객체에서 값을 불러오면 undefined가 나온다

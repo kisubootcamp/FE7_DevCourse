@@ -50,11 +50,11 @@ console.log(book.getSummary());
 
 // 5. 은행 계좌 객체 만들기
 // BankAccount 생성자 함수를 만들어서, 계좌의 초기 잔고를 설정하고, deposit, withdraw, getBalance 메서드를 구현하세요.
-function BankAccount(balance) {
-  this.balance = balance;
+function BankAccount(initialBalance) {
+  let balance = initialBalance;
   this.deposit = function (amount) {
     if (amount > 0) {
-      this.balance += amount;
+      balance += amount;
       return `${amount}원이 입금되었습니다.`;
     } else {
       return `입금 금액은 0원보다 커야 합니다.`;
@@ -62,10 +62,10 @@ function BankAccount(balance) {
   };
 
   this.withdraw = function (amount) {
-    if (amount > this.balance) {
+    if (amount > balance) {
       return `잔액이 부족합니다.`;
     } else if (amount > 0) {
-      this.balance -= amount;
+      balance -= amount;
       return `${amount}원이 출금되었습니다.`;
     } else {
       return `출금 금액은 0원보다 커야 합니다.`;
@@ -73,7 +73,7 @@ function BankAccount(balance) {
   };
 
   this.getBalance = function () {
-    return `잔액: ${this.balance}`;
+    return `잔액: ${balance}`;
   };
 }
 const bankaccount = new BankAccount(30000);

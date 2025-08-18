@@ -25,7 +25,7 @@ function Dog(name, age) {
   this.age = age;
 }
 
-Dog.prototype = Object.create(Animal.prototype); // 프로토타입 호환
+Dog.prototype = Object.create(Animal.prototype); // 프로토타입 상속
 
 Dog.prototype.bark = function () {
   return `${this.name} barks!`;
