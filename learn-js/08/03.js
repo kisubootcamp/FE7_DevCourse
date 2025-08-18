@@ -46,21 +46,23 @@ console.log(book1);
 
 // 5.
 function BankAccount(initialBalance) {
-  this.balance = initialBalance;
+  let balance = initialBalance;
   this.deposit = function (amount) {
-    this.balance += amount;
+    balance += amount;
   };
   this.withdraw = function (amount) {
-    this.balance -= amount;
+    balance -= amount;
   };
   this.getBalance = function () {
-    return this.balance;
+    return balance;
   };
 }
 const bank = new BankAccount(0);
 bank.deposit(1000);
 console.log(bank.getBalance());
 bank.withdraw(500);
+console.log(bank.getBalance());
+bank.balance = 40000;
 console.log(bank.getBalance());
 
 // 6.
