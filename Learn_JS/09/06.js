@@ -286,10 +286,10 @@ Person.prototype.listFriends = function() {
     return this.friends;
 }
 
-const john = new Person("John");
-john.addFriend("Alice");
-john.addFriend("Bob");
-console.log(john.listFriends()); // ["Alice", "Bob"]
+// const john = new Person("John");
+// john.addFriend("Alice");
+// john.addFriend("Bob");
+// console.log(john.listFriends()); // ["Alice", "Bob"]
 // ```
 
 // ---
