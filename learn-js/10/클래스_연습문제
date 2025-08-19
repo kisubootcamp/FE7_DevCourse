@@ -1,0 +1,189 @@
+//Q1
+class Car {
+  constructor(make, model, year) {
+    // 초기화 코드
+    this.make = make;
+    this.model = model;
+    this.year = year;
+  }
+
+  info() {
+    // 자동차 정보 출력 코드
+    return `${this.make} ${this.model} ${this.year}`;
+  }
+}
+
+// 테스트 케이스
+const car1 = new Car("Toyota", "Camry", 2020);
+console.log(car1.info()); // 2020 Toyota Camry
+
+//Q2
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  introduce() {
+    return "바둑이입니다.";
+  }
+}
+
+class Dog extends Animal {
+  constructor(name) {
+    super(name);
+  }
+
+  bark() {
+    return "왈왈";
+  }
+}
+
+// 테스트 케이스
+const dog = new Dog("바둑이");
+console.log(dog.introduce()); // 바둑이입니다.
+console.log(dog.bark()); // 왈왈
+
+//Q3
+class MathUtil {
+  static min(n1, n2) {
+    return n1 < n2 ? n1 : n2;
+  }
+}
+
+// 테스트 케이스
+console.log(MathUtil.min(10, 20));
+
+//Q4
+class Rectangle {
+  #width;
+  #height;
+
+  constructor(width, height) {
+    this.#width = width;
+    this.#height = height;
+  }
+
+  get area() {
+    return this.#width * this.#height;
+  }
+}
+
+// 테스트 케이스
+const rect = new Rectangle(5, 10);
+console.log(rect.area); // 50
+
+//Q5
+class Counter {
+  static count = 0;
+
+  static increment() {
+    this.count++;
+  }
+  static getValue() {
+    return this.count;
+  }
+}
+
+// 테스트 케이스
+Counter.increment();
+console.log(Counter.getValue());
+
+//Q6
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+}
+Person.prototype.greet = function (name) {
+  return `${this.name} 안녕!`;
+};
+// 테스트 케이스
+const person = new Person("이순신");
+console.log(person.greet()); // 이순신 안녕!
+
+//Q7
+
+class Shape {
+  constructor(n) {
+    this.n = n;
+  }
+  area() {
+    throw new Error("메서드 오버라이드 필수!");
+  }
+}
+
+class Circle extends Shape {
+  constructor(n) {
+    super(n);
+  }
+
+  area() {
+    return this.n ** 2 * Math.PI;
+  }
+}
+
+class Rect extends Shape {
+  constructor(n) {
+    super(n);
+  }
+
+  area() {
+    return this.n ** 2;
+  }
+}
+
+// 테스트 케이스
+const circle = new Circle(5);
+console.log(circle.area()); // 5 * 5 * 3.14
+
+const rect2 = new Rect(5);
+console.log(rect2.area()); // 25 (5*5)
+
+//Q8
+class Builder {
+  constructor() {
+    this.str = "";
+  }
+  append(newStr) {
+    this.str += newStr;
+    return this;
+  }
+  getValue() {
+    return this.str;
+  }
+}
+// 테스트 케이스
+const builder = new Builder();
+const result = builder.append("Hello, ").append("World!").getValue();
+//this는 builder임! this가 리턴되니, (builder.append) => builder
+// builder.getValue();가 되어서 체이닝이 가능해짐
+console.log(result); // Hello, World!
+
+//Q9
+class Book {
+  static count = 0;
+  constructor() {
+    Book.count++;
+  }
+  static getCount() {
+    return this.count;
+  }
+}
+// 테스트 케이스
+const book1 = new Book("1984");
+const book2 = new Book("하이퍼리얼리티");
+console.log(Book.getCount()); // 2
+
+//Q10
+class User {
+  constructor(name) {
+    this.age = 18;
+    this.name = name;
+  }
+  info() {
+    return `${this.name}의 나이는 ${this.age}세입니다.`;
+  }
+}
+// 테스트 케이스
+const user = new User("홍길동");
+console.log(user.info()); // 홍길동의 나이는 18세입니다.
