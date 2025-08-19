@@ -1,0 +1,22 @@
+class Person {
+  #age;
+  constructor(name, age) {
+    this.name = name;
+    this.#age = age;
+  }
+
+  get age() {
+    return this.#age;
+  }
+
+  set age(value) {
+    if (value < 0) throw new Error("Invalid age");
+    this.#age = value;
+  }
+}
+
+const p1 = new Person("kim", 20);
+console.log(p1.age);
+p1.age = -10;
+p1.age = 40;
+console.log(p1.age);
