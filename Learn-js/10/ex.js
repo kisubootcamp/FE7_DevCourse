@@ -192,22 +192,12 @@ class Account {
     this.#balance = balance;
   }
   deposit(amount) {
-    if (amount > 0) {
-      this.#balance += amount;
-      return `${amount}원이 입금되었습니다.`;
-    } else {
-      return `입금 금액은 0원보다 커야 합니다.`;
-    }
+    if (typeof amount !== "number" || amount <= 0) throw new Error("Invalid");
+    this.#balance += amount;
   }
   withdraw(amount) {
-    if (amount > this.#balance) {
-      return `잔액이 부족합니다.`;
-    } else if (amount > 0) {
-      this.#balance -= amount;
-      return `${amount}원이 출금되었습니다.`;
-    } else {
-      return `출금 금액은 0원보다 커야 합니다.`;
-    }
+    if (typeof amount !== "number" || amount <= 0) throw new Error("Invalid");
+    this.#balance -= amount;
   }
   get balance() {
     return this.#balance;
@@ -215,8 +205,8 @@ class Account {
 }
 // 테스트
 const acc = new Account();
-console.log(acc.deposit(100));
-console.log(acc.withdraw(30));
+acc.deposit(100);
+acc.withdraw(30);
 console.log(acc.balance); // 70
 
 /* 
@@ -257,7 +247,6 @@ console.log(c.info()); // 브랜드 Hyundai, 차량: 아반떼
 - F → C: `(F - 32) * 5/9`
 */
 class Temperature {
-  static temp = 0;
   static c2f(c) {
     return (c * 9) / 5 + 32;
   }
