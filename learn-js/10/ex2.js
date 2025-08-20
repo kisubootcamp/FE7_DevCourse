@@ -6,12 +6,14 @@ class Account {
   #balance = 0;
 
   deposit(amount) {
-    if (amount < 0) throw new Error("invalid amount");
+    if (typeof amount !== "number" || amount < 0)
+      throw new Error("invalid amount");
     this.#balance += amount;
   }
 
   withdraw(amount) {
-    if (amount < 0) throw new Error("invalid amount");
+    if (typeof amount !== "number" || amount < 0)
+      throw new Error("invalid amount");
     this.#balance -= amount;
   }
 
@@ -36,14 +38,13 @@ class Vehicle {
 }
 
 class Car extends Vehicle {
-  constructor(brand, type, name) {
+  constructor(name, brand) {
     super(name);
     this.brand = brand;
-    this.type = type;
   }
 
   info() {
-    return `브랜드 ${this.type}, 차량 : ${this.brand}`;
+    return `브랜드 ${this.name}, 차량 : ${this.brand}`;
   }
 }
 
@@ -87,12 +88,14 @@ u.fullName = "민수 김";
 console.log(u.first, u.last); // 민수 김
 
 //5
+// 이 문제는 str를 객체로 해서 하는 방법도 생각
 class QueryBuilder {
   constructor() {
     this.str = "SELECT ";
     return this;
   }
   select(name) {
+    //this.str.select = name; 이런 식으로 객체의 키 값과 밸류 값으로 하는 것도 생각
     this.name = name;
     this.str += name + " FROM ";
     return this;
