@@ -5,11 +5,12 @@
 // - `balance`는 **getter**로만 제공.
 class Account {
   #balance = 0;
-  deposit(money) {
-    this.#balance += money;
+  deposit(amount) {
+    if (typeof amount !== "number" || amount <= 0) throw new Error("Invalid");
+    this.#balance += amount;
   }
-  withdraw(money) {
-    this.#balance -= money;
+  withdraw(amount) {
+    this.#balance -= amount;
   }
   get balance() {
     return this.#balance;
@@ -20,6 +21,7 @@ class Account {
 const acc = new Account();
 acc.deposit(100);
 acc.withdraw(30);
+acc.balance = 10; // 외부에서 프라이빗 변수 변경 안됨.
 console.log(acc.balance); // 70
 
 // ---
