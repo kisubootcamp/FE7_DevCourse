@@ -28,7 +28,7 @@ function Rectangle(width, height) {
 }
 
 Circle.prototype = Object.create(Shape.prototype);
-Circle.prototype.constuct = Circle;
+Circle.prototype.constructor = Circle;
 Circle.prototype.getArea = function () {
   return this.radius ** 2 * 3.14;
 };
