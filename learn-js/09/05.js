@@ -40,9 +40,9 @@ function PrivateCounter(num = 0) {
 }
 
 const PrivateCt = new PrivateCounter(0);
-ct.increment();
-ct.increment();
-console.log(ct.getCount()); //102
+PrivateCt.increment();
+PrivateCt.increment();
+console.log(PrivateCt.getCount()); //102
 
-ct.PrivateCount = 100;
-console.log(ct.getCount()); //102, private 해짐
+PrivateCt.PrivateCount = 100;
+console.log(PrivateCt.getCount()); //102, private 해짐

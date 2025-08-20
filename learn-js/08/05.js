@@ -34,5 +34,3 @@ obj.smallObj.main(); // smallObj 가리킴
 
 // 함수는 호출과 동시에 바뀜?
 // 화살표 함수는 선언과
-
-// new의 기능...
