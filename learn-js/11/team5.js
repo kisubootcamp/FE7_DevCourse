@@ -29,5 +29,4 @@ tollgate({ 네이버: "tollgateA", 카카오: "tollgateA", 라인: "tollgateA" }
 
 
 function stairGame(n) {
-    
 }
