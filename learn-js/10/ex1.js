@@ -226,16 +226,16 @@ class Account {
   #balance = 0; // private 필드로 선언
 
   deposit(amount) {
-    if (amount <= 0) {
-      throw new Error("입금액은 0보다 커야 합니다.");
+    if (typeof amount !== "number" || amount <= 0) {
+      throw new Error("Invalid deposit amount.");
     } else {
       this.#balance += amount;
     }
   }
 
   withdraw(amonut) {
-    if (amonut <= 0) {
-      throw new Error("출금액은 0보다 커야 합니다.");
+    if (typeof amonut !== "number" || amonut <= 0) {
+      throw new Error("Invalid withdrawal amount.");
     } else if (amonut > this.#balance) {
       throw new Error("잔액이 부족합니다.");
     } else {
