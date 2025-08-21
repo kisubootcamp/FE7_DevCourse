@@ -1,0 +1,19 @@
+{
+  "name": "00",
+  "version": "1.0.0",
+  "description": "",
+  "main": "00.js",
+  "scripts": {
+    "bench": "vitest bench --run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "eslint": "^9.32.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}
