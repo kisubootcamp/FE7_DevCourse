@@ -11,13 +11,13 @@ class Account {
     }
 
     deposit(num){
+        if (typeof num !== "number" || num <= 0 ) throw new Error("Invalid")
         this.#balance += num
-        return this.#balance
     }
 
     withdraw(num){
+        if (typeof num !== "number" || num <= 0 ) throw new Error("Invalid")
         this.#balance -= num
-        return this.#balance
     }
 
     get balance() {
@@ -49,8 +49,7 @@ class Vehicle{
 class Car extends Vehicle{
     constructor(name, brand){
         // super(name)
-        super(Vehicle)
-        this.name = name;
+        super(name)
         this.brand = brand;
     }
 
@@ -115,26 +114,49 @@ console.log(u.first, u.last); // 민수 김
 // `select(cols)`, `from(table)`, `where(cond)`는 모두 `this`를 반환하여 체이닝.
 // `build()`는 최종 문자열을 반환.
 
+// class QueryBuilder{
+//     constructor(){
+//         this.text = ''
+//     }
+
+//     select(str){
+//         this.text += `SELECT ${str}`
+//         return this
+//     }
+//     from(str){
+//         this.text += ` FROM ${str}`
+//         return this
+//     }
+//     where(str){
+//         this.text += ` WHERE ${str}`
+//         return this
+//     }
+
+//     build(){
+//         return this.text 
+//     }
+// }
+
 class QueryBuilder{
     constructor(){
-        this.text = ''
+        this.parts = { select : "", from : "", where : ""}
     }
 
     select(str){
-        this.text += `SELECT ${str}`
+        this.parts.select = str
         return this
     }
     from(str){
-        this.text += ` FROM ${str}`
+        this.parts.from = str
         return this
     }
     where(str){
-        this.text += ` WHERE ${str}`
+        this.parts.where = str
         return this
     }
 
     build(){
-        return this.text 
+        return `SELECT ${this.parts.select} FROM ${this.parts.from} WHERE ${this.parts.where}`
     }
 }
 const q = new QueryBuilder()
