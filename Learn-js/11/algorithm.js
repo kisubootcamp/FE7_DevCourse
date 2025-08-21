@@ -283,7 +283,7 @@ function findParkingSpot(parkingLot, desired) {
   return "주차 불가!";
 }
 
-console.log(findParkingSpot([1, 0, 0, 1, 0, 1, 1, 0, 1, 0], 4));
+console.log(findParkingSpot([1, 0, 0, 1, 0, 1, 1, 0, 1, 0], 4)); // 3번 자리를 추천합니다.
 
 /* ---------------------------------------------------------------------------------------- */
 // 5조
@@ -363,10 +363,6 @@ function play(arr) {
       case "태극기":
         patriotic++;
         console.log(`태극기를 획득했습니다! (현재 ${patriotic})`);
-        if (patriotic >= 5) {
-          console.log("광복 성공! 축하합니다!");
-          return;
-        }
         break;
       case "일장기":
         japan++;
@@ -378,11 +374,7 @@ function play(arr) {
         break;
       case "독립운동 시도":
         movement++;
-        console.log(`태극기를 획득했습니다! (현재 ${patriotic})`);
-        if (movement >= 2) {
-          console.log("광복 성공! 축하합니다!");
-          return;
-        }
+        console.log(`독립운동을 시도했습니다! (현재 ${movement})`);
         break;
       case "일본순사":
         console.log("일본 순사에게 꼰지름! 바로 광복 실패...");
@@ -394,9 +386,13 @@ function play(arr) {
         break;
     }
   }
+  return patriotic >= 5 || movement >= 2
+    ? console.log("광복 성공! 축하합니다!")
+    : console.log("광복 실패... 다시 도전하세요.");
 }
 
 play(["태극기", "태극기", "태극기", "태극기", "태극기"]);
+play(["태극기", "태극기", "태극기", "태극기"]);
 play(["일장기", "일장기", "일장기"]);
 play(["태극기", "일본순사", "태극기"]);
 
