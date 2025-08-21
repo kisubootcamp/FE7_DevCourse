@@ -70,4 +70,72 @@
 // console.log(findKeyByValue(obj, 1)); // 'a'
 // console.log(findKeyByValue({}, 1)); // null
 
-// 5.
+// // 5.
+// function multiplyValues(obj) {
+//   let result = 1;
+//   for (const k in obj) {
+//     result += obj[k];
+//   }
+//   return result;
+// }
+
+// const obj = { a: 1, b: 2, c: 3 };
+// console.log(multiplyValues(obj)); // 6
+
+// const obj2 = { x: 2, y: 3, z: 4 };
+// console.log(multiplyValues(obj2)); // 24
+
+// const obj3 = { a: 1, b: 0, c: 3 };
+// console.log(multiplyValues(obj3)); // 0
+
+// const obj4 = {};
+// console.log(multiplyValues(obj4)); // 1 (곱셈의 항등원)
+
+// // 6.
+// function hasOwnKey(obj, key) {
+//   return Object.hasOwn(obj, key);
+// }
+// const obj = Object.create({ inherited: 1 });
+// obj.own = 2;
+
+// console.log(hasOwnKey(obj, "own")); // true
+// console.log(hasOwnKey(obj, "inherited")); // false
+// console.log(hasOwnKey({}, "a")); // false
+// console.log(hasOwnKey({ a: undefined }, "a")); // true
+
+// // 7.
+// function pick(obj, keys) {
+//   const result = {};
+//   for (const key of keys) {
+//     if (Object.hasOwn(obj, key)) result[key] = obj[key];
+//   }
+//   return result;
+// }
+// console.log(pick({ a: 1, b: 2, c: 3 }, ["a", "c"])); // { a: 1, c: 3 }
+// console.log(pick({ x: 10, y: 20 }, ["z"])); // {}
+// console.log(pick({}, ["a"])); // {}
+// console.log(pick({ a: 1 }, [])); // {}
+
+// // 8.
+// function omit(obj, keys) {
+//   const result = {};
+
+//   for (const key in obj) {
+//     if (Object.hasOwn(obj, key)) {
+//       let should = false;
+//       for (let i = 0; i < keys.length; i++) {
+//         if (keys[i] === key) {
+//           should = true;
+//           break;
+//         }
+//       }
+//       if (!should) {
+//         result[key] = obj[key];
+//       }
+//     }
+//   }
+// }
+// console.log(omit({ a: 1, b: 2, c: 3 }, ["b"])); // { a: 1, c: 3 }
+// console.log(omit({ x: 10, y: 20 }, ["x", "y"])); // {}
+// console.log(omit({}, ["a"])); // {}
+// console.log(omit({ a: 1, b: 2 }, [])); // { a: 1, b: 2 }
