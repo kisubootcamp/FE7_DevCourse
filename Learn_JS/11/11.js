@@ -105,14 +105,17 @@ console.log(findKeyByValue({}, 1)); // null
 // 주어진 객체의 모든 값들을 곱하여 반환하는 함수를 작성하세요.
 function multiplyValues(obj){
     let result = 1;
-    Object.values(obj).forEach(val => {
-        result *= val;
-    });
+    for(const k in obj){
+        if(Object.hasOwn(obj, k)){
+            result *= obj[k];
+        }
+    }
     return result;
 }
 
 // 입출력
 
+Object.prototype.extra = 10;
 const obj = { a: 1, b: 2, c: 3 };
 console.log(multiplyValues(obj)); // 6
 
