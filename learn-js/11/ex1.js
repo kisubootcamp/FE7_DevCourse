@@ -120,6 +120,7 @@ console.log(multiplyValues(obj4)); // 1 (곱셈의 항등원)
 // ------------------------------------------- 6 -------------------------------------------
 // 주어진 객체에 특정 키가 직접 소유 프로퍼티로 존재하는지 확인하는 함수를 작성하세요. (프로토타입 체인은 검사하지 않음)
 function hasOwnKey(obj, key) {
+	return Object.hasOwn(obj, key); // 강사님 풀이
 	return obj.hasOwnProperty(key);
 }
 
@@ -136,7 +137,9 @@ console.log(hasOwnKey({ a: undefined }, "a")); // true
 function pick(obj, keys) {
 	const newObj = {};
 	keys.forEach((key) => {
-		newObj[key] = obj[key];
+		if(Object.hasOwn(obj, key)) { // 강사님 풀이에 추가됨
+			newObj[key] = obj[key];
+		}
 	});
 	return newObj;
 }
