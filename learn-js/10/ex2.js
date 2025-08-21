@@ -12,12 +12,10 @@ class Account {
 	deposit(amount) {
 		if (amount < 0) throw new Error`Invaild Amount`();
 		this.#balance += amount;
-		return this.#balance;
 	}
 	withdraw(amount) {
 		if (amount < 0) throw new Error`Invaild Amount`();
 		this.#balance -= amount;
-		return this.#balance;
 	}
 	get balance() {
 		return `${this.#balance}`;
@@ -110,22 +108,23 @@ console.log(u.first, u.last); // 민수 김
 
 class QueryBuilder {
 	constructor() {
+		this.parts = { select: "", from: "", where: "" };
 		this.result = "";
 	}
 	select(char) {
-		this.result += `SELECT ${char} `;
+		this.parts.select = char;
 		return this;
 	}
 	from(char) {
-		this.result += `FROM ${char} `;
+		this.from.select = char;
 		return this;
 	}
 	where(char) {
-		this.result += `WHERE ${char} `;
+		this.from.where = char;
 		return this;
 	}
 	build() {
-		return this.result;
+		return `SELECT ${this.parts.select} FROM ${this.parts.from} WHERE ${this.parts.where}`;
 	}
 }
 
