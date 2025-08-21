@@ -2,10 +2,10 @@ const frozenObj = Object.freeze({
     name: "kim",
 });
 frozenObj.name = 10;
-delete ofrozenObj.name;
-obj.age = 20;
+delete frozenObj.name;
+frozenObj.age = 20;
 
-console.log(Object.isFrozen(obj))
+console.log(Object.isFrozen(frozenObj))
 console.log(obj);
 
 const sealedObj = Object.seal({
