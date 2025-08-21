@@ -63,18 +63,18 @@
 // 객체에 실제로 존재 하는지 확인
 // 열거 가능한 속성도 읽으면 안되니까 for..in
 
-function findKeyByValue(obj, num) {
-  let find;
-  Object.keys(obj).forEach((key, index) => {
-    if (num - 1 === index) find = key;
-  });
-  return find || null;
-}
-const obj = { a: 1, b: 2, c: 3 };
-console.log(findKeyByValue(obj, 2)); // 'b'
-console.log(findKeyByValue(obj, 4)); // null
-console.log(findKeyByValue(obj, 1)); // 'a'
-console.log(findKeyByValue({}, 1)); // null
+// function findKeyByValue(obj, num) {
+//   let find;
+//   Object.keys(obj).forEach((key, index) => {
+//     if (num - 1 === index) find = key;
+//   });
+//   return find || null;
+// }
+// const obj = { a: 1, b: 2, c: 3 };
+// console.log(findKeyByValue(obj, 2)); // 'b'
+// console.log(findKeyByValue(obj, 4)); // null
+// console.log(findKeyByValue(obj, 1)); // 'a'
+// console.log(findKeyByValue({}, 1)); // null
 
 // 5.
 // function multiplyValues(obj) {
@@ -110,6 +110,9 @@ console.log(findKeyByValue({}, 1)); // null
 // 7.
 // function pick(obj, arr) {
 //   const result = {};
+
+// 2중반복문 안쓰고 if hasOwn 함수 쓰면됨
+
 //   Object.keys(obj).forEach((key) => {
 //     for (value of arr) {
 //       if (value === key) {
@@ -127,13 +130,15 @@ console.log(findKeyByValue({}, 1)); // null
 
 // 8.
 function omit(obj, arr) {
+  const newObj = structuredClone(obj);
   for (const value of arr) {
-    Object.keys(obj).forEach((key) => {
-      if (key === value) delete obj[key];
-    });
+    // Object.keys(obj).forEach((key) => {
+    //   if (key === value) delete obj[key];
+    // });
+    if (Object.hasOwn(obj, value)) delete newObj[value];
   }
 
-  return obj;
+  return newObj;
 }
 console.log(omit({ a: 1, b: 2, c: 3 }, ['b'])); // { a: 1, c: 3 }
 console.log(omit({ x: 10, y: 20 }, ['x', 'y'])); // {}
