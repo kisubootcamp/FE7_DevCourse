@@ -31,7 +31,7 @@ if (!isLoggedIn) {
 } else if (isAdmin) {
   console.log("Welcome, admin!");
 } else {
-  console.log("access denied");
+  console.log("Access denied");
 }
 
 // 4
@@ -58,7 +58,7 @@ switch (month) {
   case 3:
   case 4:
   case 5:
-    console.log("spring");
+    console.log("Spring");
     break;
   case 6:
   case 7:
