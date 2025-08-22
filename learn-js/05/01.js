@@ -19,6 +19,8 @@ function num() {
 console.log(num); // 5
 console.log(num()); // 에러: 함수가 아님
 
+//
+
 var num;
 function num() {
   return 10;
@@ -28,3 +30,19 @@ console.log(num);
 
 console.log(num);
 console.log(num()); // 이게 더 이상 함수가 아니게 됨
+
+//
+
+console.log(num); // undefined
+var num = 10;
+console.log(num); // 10
+
+// let, const를 사용하면 초기화 되기 전에 접근할 수 없다고 뜸 TDZ
+
+printName(); // greet
+
+function printName() {
+  console.log("greet");
+}
+
+// 함수 선언문도 호이스팅 됨
