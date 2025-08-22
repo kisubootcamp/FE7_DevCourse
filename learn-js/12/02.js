@@ -37,3 +37,7 @@ console.log(sum); // 10
 // 전에 for문ㅇ로 풀었었음
 const str = "hello";
 console.log(str.split("").reverse().join(''));
+
+//.sort()
+// 주의점 : 정렬이 잘 안 될 수 있음 ?
+// comparefunction :: 정렬에 기준(참고)이 되는 함수를 넣을 수 있음 ()안에다가 -> 정밀 비교
