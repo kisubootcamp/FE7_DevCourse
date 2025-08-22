@@ -24,19 +24,19 @@ console.log(students.some((student) => student.height <= 165));
 console.log(students.every((student) => student.age >= 10));
 
 //5. 학생들의 평균 연령 구하기
-console.log(students.reduce((acc, cur) => acc + students.age));
+const sum = students.reduce((prev, cur) => prev + cur.age, 0);
+console.log(sum / students.length);
 
-const basket = [
-  { id: 1, name: "귀저기", price: 1000 },
-  { id: 2, name: "분유", price: 2000 },
-  { id: 3, name: "젖병", price: 3000 },
-];
-
-const totalPrice = basket.reduce((prev, cur) => prev + cur.price, 0);
-console.log(totalPrice.toLocaleString());
-students.reduce();
 //6. 남학생들의 평균 연령 구하기
+const boys = students.filter((student) => student.gender === "male");
+const boys_sum = boys.reduce((prev, cur) => prev + cur.age, 0);
+console.log(boys_sum / boys.length);
 
-//7. 야학생들의 이름만 따로 추출해서 새로운 배열 만들기
+//7. 여학생들의 이름만 따로 추출해서 새로운 배열 만들기
+const girls = students.filter((student) => student.gender === "female");
+const girls_name = girls.map((girl) => girl.name);
+console.log(girls_name);
 
 //8. 여학생들 중 나이가 가장 어린 학생 찾기
+girls.sort((a, b) => a.age - b.age);
+console.log(girls[0]);
