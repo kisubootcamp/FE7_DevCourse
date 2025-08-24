@@ -377,6 +377,21 @@ function removeDuplicateValues(obj) {
   return result;
 }
 
+function removeDuplicateValues(obj) {
+  const values = Object.values(obj); // 객체의 값을 배열로 저장
+  const freq = values.reduce((m, v) => {
+    m[v] = (m[v] || 0) + 1;
+    return m;
+  }, {});
+  const result = {};
+  for (const key in obj) {
+    if (freq[obj[key]] === 1) {
+      result[key] = obj[key];
+    }
+  }
+  return result;
+}
+
 const obj1111 = { a: 1, b: 2, c: 1, d: 3 };
 console.log(removeDuplicateValues(obj1111)); // { b: 2, d: 3 }
 
