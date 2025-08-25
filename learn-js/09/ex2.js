@@ -75,7 +75,7 @@ function BankAccount(initialBalance) {
 BankAccount.prototype.deposit = function (money) {
 	this.balance += money;
 	return this.balance;
-  // 추상 메서드로 진행하게 되면 this를 사용할 수가 없게되어서 프라이빗이 불가함. 그래서 생성자 함수 내부에 직접 메서드 작성해줘야함
+  // 추상 메서드처럼 진행하게 되면 this를 사용할 수가 없게되어서 프라이빗이 불가함. 그래서 생성자 함수 내부에 직접 메서드 작성해줘야함
 };
 BankAccount.prototype.withdraw = function (money) {
 	this.balance -= money;
