@@ -1,0 +1,41 @@
+// RegExp
+// 자바스크립트에서 정규 표현식을 다루기 위한 내장 객체
+
+// 생성방법
+// 리터럴
+const literal1 = /abc/;
+const literal2 = /abc/i; // 플래그, g, i
+
+// 생성자 함수
+const instance1 = new RegExp("abc", "");
+const instance2 = new RegExp("abc", "i");
+
+// .test()
+// 패턴이 문자열과 매칭되는지 여부를 반환
+console.log(/abc/.test("123abd1234"));
+
+// .match()
+console.log("123abd12ab34".match(/ab/g).length);
+
+console.log(/^\d+$/.test("12a345"));
+// 문자 클래스
+// .
+// \d
+// \w
+// \s
+
+// 앵커
+// ^
+// $
+// \b
+// \B
+
+// 수량자
+// *
+// +
+// ?
+// {n}
+// {n, m}
+
+// 그룹선택
+// ()
