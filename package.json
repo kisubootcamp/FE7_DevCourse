@@ -1,0 +1,16 @@
+{
+  "name": "learn_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "bench": "vitest run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^9.32.0",
+    "vitest": "^3.2.4"
+  }
+}
