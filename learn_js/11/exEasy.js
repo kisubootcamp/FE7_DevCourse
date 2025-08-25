@@ -74,7 +74,10 @@
 // // 5. 객체의 모든 값 곱하기 : 주어진 객체의 모든 값들을 곱하여 반환하는 함수를 작성하세요.
 // const multiplyValues = function (obj) {
 //   let result = 1;
-//   for (const k in obj) result *= obj[k];
+//   for (const k in obj)
+//     if (Object.hasOwn(obj, k)) {
+//       result *= obj[k];
+//     }
 //   return result;
 // };
 
@@ -118,17 +121,17 @@
 // console.log(pick({}, ['a'])); // {}
 // console.log(pick({ a: 1 }, [])); // {}
 
-// // 8. 특정 키 제외 (omit) : 주어진 객체에서 지정된 키들을 제외하고 새 객체로 반환하는 함수를 작성하세요.
+// 8. 특정 키 제외 (omit) : 주어진 객체에서 지정된 키들을 제외하고 새 객체로 반환하는 함수를 작성하세요.
 
-// const omit = function (obj, arr) {
-//   const result = JSON.parse(JSON.stringify(obj));
-//   for (k in arr) {
-//     if (Object.hasOwn(result, arr[k])) delete result[arr[k]];
-//   }
-//   return result;
-// };
+const omit = function (obj, arr) {
+  const result = JSON.parse(JSON.stringify(obj));
+  for (k in arr) {
+    if (Object.hasOwn(result, arr[k])) delete result[arr[k]];
+  }
+  return result;
+};
 
-// console.log(omit({ a: 1, b: 2, c: 3 }, ['b'])); // { a: 1, c: 3 }
-// console.log(omit({ x: 10, y: 20 }, ['x', 'y'])); // {}
-// console.log(omit({}, ['a'])); // {}
-// console.log(omit({ a: 1, b: 2 }, [])); // { a: 1, b: 2 }
+console.log(omit({ a: 1, b: 2, c: 3 }, ['b'])); // { a: 1, c: 3 }
+console.log(omit({ x: 10, y: 20 }, ['x', 'y'])); // {}
+console.log(omit({}, ['a'])); // {}
+console.log(omit({ a: 1, b: 2 }, [])); // { a: 1, b: 2 }
