@@ -136,5 +136,91 @@
 // console.log(result);
 
 //14
-const str1 = "abc";
-const str2 = "cab";
+// const str1 = "abc";
+// const str2 = "cab";
+
+// const start = str1[0];
+// for (let i = 0; i < str2.length; i++) {
+//   if (start === str2[i]) {
+//     let idx = i;
+//   } else console.log(false);
+// }
+// for (let i = idx; i < str1.length; i++) {
+//   if (str2[i] !== str1[Math.floor((i + start) / 2)]) {
+//     console.log(false);
+//     break;
+//   }
+//   if (i === 2) i = i % 2;
+// }
+// console.log(true);
+
+//15
+// const str1 = "abc";
+// const str2 = "abdc";
+// let isRotate = true;
+// for (const elm of str1) if (!str2.includes(elm)) isRotate = false;
+// console.log(isRotate);
+
+//16
+// const str = "babad";
+
+//17
+// const str = "Hello World!";
+// let result = "";
+// for (const elm of str) {
+//   if (elm.toLowerCase() === elm) result += elm.toUpperCase();
+//   else if (elm.toUpperCase() === elm) result += elm.toLowerCase();
+//   else result += elm;
+// }
+// console.log(result);
+
+//18
+// const str = "Hello. How are you?";
+// console.log(str.split("").reverse().join(""));
+
+//19
+// let arr1 = [];
+// [for(let i = 0;i<str.split(" ").length;i++){
+//   [arr]
+// }] = str.split(" ");
+// console.log(arr1);
+
+// const str = "tHIS Is a tItLE";
+// let answer = str[0].toUpperCase();
+// for (let i = 1; i < str.length; i++) {
+//   if (str[i] === " ") {
+//     answer = answer + str[i] + str[i + 1].toUpperCase();
+//     i++;
+//   } else {
+//     answer += str[i].toLowerCase();
+//   }
+// }
+// console.log(answer);
+
+//20
+// const str = "For your information";
+// let answer = "";
+// for (const elm of str.split(" ")) {
+//   answer += elm[0];
+// }
+// console.log(answer);
+
+//21
+// const email = "example@test.com";
+
+//22
+// const str = "abcdegh";
+
+//23
+// const str = "banana";
+// let arr = [];
+// for (const char of str) {
+//   arr.push(char.charCodeAt());
+// }
+
+// let arr2 = arr.sort((a, b) => a - b);
+// let answer = "";
+// for (const elm of arr2) {
+//   answer += String.fromCharCode(elm);
+// }
+// console.log(answer);
