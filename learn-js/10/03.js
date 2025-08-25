@@ -1,5 +1,5 @@
 class Person {
-    consturctor(name, age) {
+    constructor(name, age) {
         this.name = name;
         this.age = age;
     }
@@ -11,7 +11,9 @@ class Person {
         return `${this.name}, ${this.age}`;
     }
 }
-
+// Person.prototype.greet = function() {
+//     return `Hello, ${this.name}`;
+// }
 const p1 = new Person("kim", 20);
 console.log(p1.greet());
 console.log(p1.getInfo());
