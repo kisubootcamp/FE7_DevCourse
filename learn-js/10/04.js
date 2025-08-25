@@ -17,14 +17,11 @@
 function Person(lastName, firstName) {
     this.lastName = lastName;
     this.firstName = firstName;
-    this.fullName = function () {
-        return `${this.lastName} ${this.firstName}`;
-    }
 }
 
 Object.defineProperty(Person.prototype, "fullName", {
     get: function () {
-        retrun `${this.lastName} ${this.firstName}`;
+        return `${this.lastName} ${this.firstName}`;
     },
     set: function (value) {
         const [lastName, firstName] = value.split(" ");
@@ -34,7 +31,8 @@ Object.defineProperty(Person.prototype, "fullName", {
 })
 
 const p1 = new Person("kim", "suyeon");
-console.log(`${p1.lastName} ${p1.firstName}`);
+p1.fullName = "park chulsu";
+// p1.lastName = "kim";
 console.log(p1.lastName);
-console.log(p1.FirstName);
+console.log(p1.firstName);
 console.log(p1.fullName);
