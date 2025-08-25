@@ -22,7 +22,7 @@ console.log(original.name); // Alice (원본 데이터는 변경되지 않음)
 console.log(deepCopy.name); // Bob (복사된 데이터는 변경됨)
 
 // 구조분해할당(비구조화할당)
-const { name: userName, age } = { name: "kim", age: 20 };
+const { name: userName, age: userAge } = { name: "kim", age: 20 };
 
 const [a, b, c] = [1, 2, 3]; // 배열 구조분해할당
 

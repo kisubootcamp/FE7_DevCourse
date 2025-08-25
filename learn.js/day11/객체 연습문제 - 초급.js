@@ -82,9 +82,11 @@ console.log(findKeyByValue({}, 1)); // null
 // ## 5. 객체의 모든 값 곱하기
 // 주어진 객체의 모든 값들을 곱하여 반환하는 함수를 작성하세요.
 function multiplyValues(obj) {
-  let res = 1;
+  let res = 1;)
   for (const key in obj) {
-    res *= obj[key];
+    if (Object.hasOwn(obj, key)) {
+      res *= obj[key];
+    }
   }
   return res;
 }
@@ -144,9 +146,28 @@ function omit(obj, keys) {
   return newObj;
 }
 
+// 강사님 코드
+// function omit(obj, keys) {
+//   const result = {};
+  
+//   for (const key in obj) {
+//     if (Object.hasOwn(obj, key)) {
+//       let should = false; // 현재 키를 제외할지 여부 플래그
+//       for (let i = 0; i < keys.length; i++) {
+//         if (keys[i] === key) {
+//           should = true; // 현재 키가 제외할 키 목록에 있다면
+//           break;
+//         }
+//       }
+//       if(!should) {
+//         result[key] = obj[key]; // 현재 키가 제외 목록에 없다면 결과 객체에 추가
+//       }
+//     }
+//   }
+// }
+
 console.log(omit({ a: 1, b: 2, c: 3 }, ["b"])); // { a: 1, c: 3 }
 console.log(omit({ x: 10, y: 20 }, ["x", "y"])); // {}
 console.log(omit({}, ["a"])); // {}
 console.log(omit({ a: 1, b: 2 }, [])); // { a: 1, b: 2 }
 
-)
