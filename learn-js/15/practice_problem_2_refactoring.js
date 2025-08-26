@@ -73,68 +73,44 @@
 }
 
 {
-    // function getSortedPostTitles() {
-    //     fetch(`https://jsonplaceholder.typicode.com/posts`)
-    //         .then((res) => {
-    //             if (!res.ok) return new Error('response Error')
-    //             return res.json()
-    //         })
-    //         .then((data) => {
-    //             // console.log(data)
-    //             const title = data.map((v) => v.title);
-    //             const sortTitle = title.sort((a,b) => a.localeCompare(b));
-    //             return console.log(sortTitle)
-    //         })
-    // }
     async function getSortedPostTitles() {
         const res = await fetch(`https://jsonplaceholder.typicode.com/comments`);
         if(!res) return new Error('response Error')
         const data  = await res.json()
-        // data.forEach(({ body }) => {
-        //     console.log(`Comment:  ${body}`);
-        // });
+        const result = []
+        data.forEach(({ body }) => {
+            return result.push(body)
+        });
+        console.log(result.sort((a,b) => a.localeCompare(b)))
     }
     getSortedPostTitles();
 }
 
 {
-    function getAllUserAddresses() {
-        fetch(`https://jsonplaceholder.typicode.com/users`)
-            .then((res) => {
-                if (!res.ok) return new Error('response Error')
-                return res.json()
-            })
-            .then((data) => {
-                // console.log(data)
-
-                // data.forEach((user) => {
-                //     const { name, address } = user;
-                //     const { suite, street, city, zipcode } = address;
-                //     console.log(`Address of ${name}: ${suite} ${street}, ${city} ${zipcode}`);
-                // });
-
-                return data.map((v) => console.log(`Address of ${v.name}: ${v.address.suite} ${v.address.street} ${v.address.city} ${v.address.zipcode}`))
-            })
+    async function getAllUserAddresses() {
+        const res = await fetch(`https://jsonplaceholder.typicode.com/users`);
+        if(!res) return new Error('response Error')
+        const data  = await res.json()
+        data.forEach((v) => {
+            const {address , name} = v;
+            const {suite, street,city,zipcode} = address;
+            
+            return console.log(`Address of ${name}: ${suite} ${street} ${city} ${zipcode}`)
+        })
     }
-    
+
     getAllUserAddresses();
 }
 
 {
-    function getUserPostTitles(userId) {
-        fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
-            .then((res) => {
-                if (!res.ok) return new Error('response Error')
-                return res.json()
-            })
-            .then((data) => {
-                // console.log(data)
-                data.filter(v => {
-                    if(v.userId === userId)
-                        return console.log(`Post title : ${v.title}`)
-                })
-            })
+    async function getUserPostTitles(userId) {
+        const res = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`);
+        if(!res) return new Error('response Error')
+        const data  = await res.json()
+        data.filter((v) => {
+            if(v.userId === userId)
+                console.log(`Post title : ${v.title}`)
+        })
     }
-    
     getUserPostTitles(1);
 }
