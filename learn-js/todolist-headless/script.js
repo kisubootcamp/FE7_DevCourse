@@ -2,6 +2,11 @@
 // 힌트2. 키는 문자열
 // 힌트3. 
 
+/**
+ * 할 일을 나타내는 클래스
+ * 할 일은 아이디(id), 주제(subject), 완료 여부(completed)로 구성된다.
+ * 아이디는 항상 새로운 아이디가 발급된다.
+ */
 class Todo {
     static newId = 0;
     constructor(subject) {
@@ -12,7 +17,9 @@ class Todo {
 }
 
 /**
+ * 할 일 목록 객체.
  * 모든 todo에 대하여 id에서 todo 객체로의 맵
+ * 객체를 맵으로 사용
  */
 let todoMap = {
 };
@@ -22,8 +29,7 @@ let todoMap = {
  */
 export function addTodo(subject) {
     let newTodo = new Todo(subject);
-    todoMap[newTodo.id] = newTodo;
-    return newTodo;
+    todoMap[newTodo.id] = newTodo; 
 }
 
 
