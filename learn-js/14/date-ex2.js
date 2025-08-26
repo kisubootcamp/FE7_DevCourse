@@ -53,18 +53,34 @@
 {
 	// 설명: 주어진 연도와 월의 주 수를 계산하세요.
 	function weeksInMonth(year, month) {
-		const date = new Date(year, month, 1);
+		const startDate = new Date(year, month, 1);
+		const weekday = startDate.getDay();
 		const endDate = new Date(year, month + 1, 0).getDate();
-
-		const diffWeeks = (endDate - startDate) / (1000 * 60 * 60 * 24) / 7;
-		return `${Math.floor(diffWeeks)}주`;
+		const weeks =
+			Math.ceil((endDate - startDate.getDate() - (7 - weekday)) / 7) + 1; // 가끔 1일이 토요일에 있는데 그렇게 치면 1주 치기가 어려움. 요일 구해서 7 빼기
+		return weeks;
 	}
 
 	console.log(weeksInMonth(2024, 0)); // 5주
-	console.log(weeksInMonth(2024, 1)); // 4주 (윤년)
+	console.log(weeksInMonth(2024, 1)); // 5주 (윤년) <- 확인해보니 5주임!!
 	console.log(weeksInMonth(2024, 6)); // 5주
 }
 {
+	function previousSunday(dateStr) {
+		const [year, month, date] = dateStr.split("-");
+		const thatDate = new Date(dateStr);
+		const getDay = thatDate.getDay();
+		const previousSunday = new Date(year, month - 1, date - getDay);
+		return previousSunday //
+			.toLocaleString("ko-KR")
+			.split(". ")
+			.reduce((acc, cur, i) => {
+				if (i < 2) acc = acc + cur + "-";
+				else if (i === 2) acc += cur;
+				return acc;
+			}, "");
+	}
+
 	// 설명: 주어진 날짜에서 가장 가까운 이전 일요일의 날짜를 출력하세요.
 	console.log(previousSunday("2024-10-30")); // 2024-10-27
 	console.log(previousSunday("2024-10-26")); // 2024-10-20
@@ -72,20 +88,74 @@
 }
 {
 	// 설명: 주어진 연도의 마지막 날의 날짜와 요일을 출력하세요.
+	function lastDayOfYear(year) {
+		const thatDate = new Date(year + 1, 0, 0);
+		const day = [
+			"일요일",
+			"월요일",
+			"화요일",
+			"수요일",
+			"목요일",
+			"금요일",
+			"토요일",
+		];
+		return {
+			year: year,
+			month: thatDate.getMonth() + 1,
+			date: thatDate.getDate(),
+			weekday: day[thatDate.getDay()],
+		};
+	}
+
 	const result = lastDayOfYear(2024);
-	console.log(`${2024}년 마지막 날: ${result.date} ${result.weekday}`); //2024년 마지막 날: 2024. 12. 31. 화요일
+	console.log(
+		`${2024}년 마지막 날: ${result.year}. ${result.month}. ${result.date}. ${
+			result.weekday
+		}`,
+	); //2024년 마지막 날: 2024. 12. 31. 화요일
 }
 {
 	// 설명: 두 사람의 생일이 같은 날인지 확인하는 함수를 작성하세요.
+	function isSameBirthday(a, b) {
+		const today = new Date();
+		const aBirth = new Date(a);
+		const bBirth = new Date(b);
+		aBirth.setFullYear(today.getFullYear());
+		bBirth.setFullYear(today.getFullYear());
+
+		return String(aBirth) === String(bBirth)
+			? "같은 날입니다"
+			: "다른 날입니다";
+	}
 	console.log(isSameBirthday("2024-05-15", "2020-05-15")); // 같은 날입니다.
 	console.log(isSameBirthday("2024-05-15", "2020-05-25")); // 다른 날입니다.
 }
 {
 	// 설명: 주어진 연도에 대한 각 월의 평균 일수를 출력하세요.
+	function averageDaysInYear(year) {
+		let result = [];
+		for (let i = 0; i < 12; i++) {
+			const thatDate = new Date(year, i + 1, 0);
+			result.push(thatDate.getDate());
+		}
+		return result;
+	}
+
 	console.log(`${2024}년 각 월의 평균 일수: ${averageDaysInYear(2024)}`);
 }
 {
 	// 설명: 주어진 연도의 첫 번째 월요일의 날짜를 출력하세요.
+	function firstMondayOfYear(year) {
+		const thatDate = new Date(year, 0, 1);
+		const day = thatDate.getDay();
+
+		if (day === 1) {
+			return new Date(year, 0, 1).toLocaleString("ko-KR").slice(0, 13);
+		} else {
+			new Date(year, 0, 1 + (7 - day + 1)).toLocaleString("ko-KR").slice(0, 13);
+		}
+	}
+
 	const firstMonday = firstMondayOfYear(2024);
-	console.log(firstMondayOfYear); // 2024년 첫 번째 월요일: 2024. 01. 08.
+	console.log(firstMonday); // 2024년 첫 번째 월요일: 2024. 01. 08.
 }
