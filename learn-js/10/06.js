@@ -28,4 +28,4 @@ class Dog extends Animal {
 const dg1 = new Dog("퍼피");
 console.log(dg1.speak());
 console.log(dg1.bark());
-console.log(dg1.toString());
+console.log(dg1.toString()); //Object의 메소드 toString을 오버라이딩
