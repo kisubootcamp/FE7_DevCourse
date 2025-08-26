@@ -53,7 +53,7 @@
 {
 	// 설명: 주어진 연도와 월의 주 수를 계산하세요.
 	function weeksInMonth(year, month) {
-		const startDate = new Date(year, month, 1);
+		const date = new Date(year, month, 1);
 		const endDate = new Date(year, month + 1, 0).getDate();
 
 		const diffWeeks = (endDate - startDate) / (1000 * 60 * 60 * 24) / 7;
