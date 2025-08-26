@@ -15,3 +15,9 @@ console.log(set);
 const numArr = [1, 2, 1, 2, 3];
 const copyNumArr = [...new Set(numArr)];
 console.log(copyNumArr);
+
+
+//add
+//delete(value)
+//has(value)
+//clear - set을 모두 비웁니다.
