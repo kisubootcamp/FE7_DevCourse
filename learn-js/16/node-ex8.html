@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>문제 8</title>
+</head>
+<body>
+  <div data-role="admin">관리자</div>
+  <div data-role="user">사용자</div>
+  <div data-role="admin">관리자 2</div>
+  <script>
+    const admins = document.querySelectorAll("[data-role='admin']");
+    for (const admin of admins) {
+        console.log(admin);
+    }
+  </script>
+</body>
+</html>

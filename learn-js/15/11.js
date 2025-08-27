@@ -9,11 +9,14 @@ function fetchNumber() {
     return new Promise((resolve) => resolve(2));
 }
 
-async function fetchNumber() {
+async function fetchNumber2() {
     return 2;
 }
 
 fetchNumber()
+.then(console.log);
+
+fetchNumber2()
 .then(console.log);
 
 // 프로미스 객체를 만드는 이유: 비동기 흐름을 제어하기 위함.
@@ -22,9 +25,14 @@ async function fetchNumbers() {
     return delay(2000)
     .then(() => 2);
 }
-async function fetchNumbers() {
+async function fetchNumbers2() {
+    // let a = await fetchNumbers();
     await delay(2000); // code stop
+    // console.log(a);
     return 2;
 }
 fetchNumbers()
+    .then(console.log);
+
+fetchNumbers2()
     .then(console.log);

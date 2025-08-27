@@ -7,7 +7,9 @@ function printTwo(callback) {
     setTimeout(() => {
         console.log("2");
         callback();
+        console.log(4);
     }, 1000)
+    console.log(5);
 }
 
 function printThree() {

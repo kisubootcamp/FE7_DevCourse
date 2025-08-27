@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="./2.js"></script>
+    <style>
+        #title {
+            color: red;
+        }
+        .big {
+            font-size: 50px;
+        }
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Hello</h1>
+    <h1 class="red">Hello</h1>
+    <h2 class="red">World</h2>
+    <p>Lorem, ipsum.</p>
+    <a href="https://www.naver.com">네이버</a>
+    <a href="https://www.google.com">구글</a>
+    <form name="login-form">
+        <input type="text" name="email" value="test"/>
+        <input type="text" name="pw" value="1234"/>
+    </form>
+    <form class="signup-from">
+        <input type="text" name="pw" value="1234"/>
+    </form>
+
+    <ul id="list">
+        <li>하나</li>
+        <li id="target" class="red">둘</li>
+        <li>셋</li>
+    </ul>
+    <script>
+        // get***
+        const liEl = document.querySelector("#target");
+        const newLiEl = document.createElement("li");
+        newLiEl.innerText = "넷";
+
+        const ulEl = document.querySelector("#list");
+        // ulEl.appendChild(newLiEl);
+        ulEl.insertBefore(newLiEl, liEl);
+        // liEl.innerHTML = "<strong>둘!</strong>";
+        liEl.innerText = "<strong>둘!</strong";
+        document.getElementsByClassName("title");
+        liEl.classList.add("big");
+        liEl.classList.remove("red");
+        liEl.classList.toggle("red"); // 없으면 추가, 있으면 삭제
+        liEl.classList.toggle("red");
+        liEl.classList.toggle("red");
+        console.log(liEl.classList.contains("red"));
+        // query***
+        // querySelector, querySelectorAll
+        const form = document.forms["login-form"];
+        console.log(form.email.value);
+        console.log(form.pw.value);
+        const el = document.querySelectorAll("div > h1"); // CSS 선택자 문법 사용
+        // const el = document.querySelectorAll("a[href='https://www/google.com']"); // CSS 선택자 문법 사용
+        console.log(el);
+
+        // liEl.style.color = "red";
+         //liEl.style.textDecoration = "line-through";
+        //liEl.setAttribute("class", "big");
+        // liEl.removeAttribute("style");
+        // console.log(liEl.getAttribute("class"));
+        
+        // console.log(liEl.parentNode);
+        // console.log(liEl.previousSibling);
+        // console.log(liEl.previousElementSibling);
+        // console.log(liEl.nextSibling);
+        // console.log(liEl.nextElementSibling);
+
+    </script>
+</body>
+</html>

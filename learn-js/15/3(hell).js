@@ -16,7 +16,6 @@ function task4(callback) {
 }
 function task5() {
     console.log("task5");
-    callback();
 }
 
 // 콜백함수, 콜백 지옥 패턴

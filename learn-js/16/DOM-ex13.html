@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>문제 14</title>
+</head>
+<body>
+  <p>첫 번째 문단</p>
+  <p>두 번째 문단</p>
+  <script>
+    const ps = document.querySelectorAll("p");
+    for (const p of ps) {
+        p.innerText = "모든 문단의 텍스트";
+    }
+    // ps.forEach(el => console.log());
+  </script>
+</body>
+</html>

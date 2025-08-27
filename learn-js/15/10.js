@@ -4,12 +4,13 @@
 console.log("start");
 fetch("https://jsonplaceholder.typicode.com/posts")
 .then((res) => {
-     console,log(res);
+     console.log(res);
      if (!res.ok) throw new Error("network error");
      return res.json(); // json 형식으로 파싱해서 javascript 자료형 변환함
     })
 .then((posts) => {
     for (const post of posts) {
+        // console.log(post);
         console.log(post.title);
         console.log(post.id);
         console.log(post.body);

@@ -11,11 +11,12 @@ fetchNumber
     return 0;
 })
 .then((num) => {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
     setTimeout(() => reject(new Error("에러 발생함")), 2000);
     })
 })
-.catch(() => {
+.catch((reason) => {
+    console.error(reason);
     return 0;
 })
 .then((num) => console.log(num));

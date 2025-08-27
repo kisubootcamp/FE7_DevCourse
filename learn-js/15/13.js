@@ -49,6 +49,6 @@ const getAllWeatherIconAsyncs = async () => {
     console.log(sun, wave, cloud);
     console.timeEnd();
 };
-
-getAllWeatherIcons();
+getAllWeatherIconAsync();
+getAllWeatherIconAsyncs();
 console.log("hello");

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>문제 13</title>
+</head>
+<body>
+  <ul>
+    <li>기존 항목 1</li>
+    <li>기존 항목 2</li>
+  </ul>
+  <script>
+    const ul = document.querySelector("ul");
+    const li = document.createElement("li");
+    li.innerText = "첫 번째 항목";
+    ul.insertBefore(li, ul.firstChild);
+  </script>
+</body>
+</html>

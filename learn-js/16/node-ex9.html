@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>문제 9</title>
+</head>
+<body>
+  <div>관리자</div>
+  <div>사용자</div>
+  <div>게스트</div>
+  <script>
+    const divs = document.querySelectorAll("div");
+    for (const div of divs) {
+        if (div.innerHTML === "사용자") {
+            console.log(div);
+        }
+    }
+   /*
+    const divEls = document.querySelectorAll("div");
+    const convertToArray = Array.from(divEls);
+    const findDivEl = convertToArray.find(
+      (div) => div.innerText === "사용자"
+    );
+    console.log(findDivEl);
+    */
+  </script>
+</body>
+</html>
