@@ -1,0 +1,80 @@
+<!-- DOM 연습 문제 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>연습 문제</title>
+  </head>
+  <body>
+    <h1>기존 제목</h1>
+    <p>이 문단에 클래스를 추가하세요.</p>
+    <h2>배경색을 변경하세요.</h2>
+    <ul>
+      <li>기존 항목</li>
+    </ul>
+    <a href="#">링크</a>
+    <p>삭제할 요소입니다.</p>
+    <div>기존 텍스트</div>
+    <div>
+      <p>이 요소의 부모를 찾고 배경색을 변경하세요.</p>
+    </div>
+    <script>
+      // 1
+      document.querySelector("h1").innerText = "Hello, DOM!";
+
+      // 2
+      const div = document.createElement("div");
+      div.innerText = "새로운 콘텐츠";
+      document.querySelector("body").appendChild(div);
+
+      // 3
+      document.querySelector("p").classList.remove("highlight");
+
+      // 4
+      document.querySelector("p").removeAttribute("class");
+
+      // 5
+      document.querySelector("h2").style.backgroundColor = "yellow";
+
+      // 6
+      const li = document.createElement("li");
+      li.innerText = "새로운 항목";
+      document.querySelector("ul").appendChild(li);
+
+      // 7
+      document
+        .querySelector("a")
+        .setAttribute("href", "https://www.example.com");
+
+      // 8
+      document.querySelector("p").remove();
+
+      // 9
+      document.querySelector("div").innerText = "새로운 텍스트";
+
+      // 10
+      document.querySelector("body").innerHTML += `
+      <div class="card">
+        <h3>카드 제목</h3>
+        <p>카드 내용</p>
+      </div>
+      `;
+
+      // 11
+      const p = document.querySelector("p");
+      const parent = p.parentElement;
+      parent.style.backgroundColor = "lightgray";
+
+      // 12
+      const newLi = document.createElement("li");
+      newLi.innerText = "첫 번째 항목";
+      const ul = document.querySelector("ul");
+      ul.insertBefore(newLi, ul.firstElementChild);
+
+      // 13
+      const allP = document.querySelectorAll("p");
+      allP.forEach((p) => (p.innerText = "모든 문단의 텍스트"));
+    </script>
+  </body>
+</html>
