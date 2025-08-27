@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="title" class="title">JavaScript</h1>
+    <form name="login-form">
+      <input type="text" name="username" />
+      <input type="password" name="password" />
+      <button>Login</button>
+    </form>
+    <form class="signup-form">
+      <input type="text" name="email" />
+      <input type="password" name="password" />
+      <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+      <button>Sign Up</button>
+    </form>
+    <script>
+      const el = document.getElementById("title");
+      //   const el2 = document.getElementsByClassName("title");
+      const el2 = document.querySelector(".title");
+      console.log(el);
+      console.log(document.forms["login-form"]);
+      console.log(document.querySelector(".login-form"));
+      //
+      const list = document.querySelector("#target");
+      console.log(list.parentNode);
+      console.log(list.previousSibling);
+      console.log(list.previousElementSibling);
+      console.log(list.nextSibling);
+      console.log(list.nextElementSibling);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,255 @@
+<!-- DOM + 노드 연습문제 -->
+<!-- 1. HTML 페이지에 있는 <h1> 태그의 텍스트를 "Hello, DOM!"으로 변경하세요. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>연습문제 1</title>
+  </head>
+  <body>
+    <h1>기존 제목</h1>
+    <script>
+      const h1 = document.querySelector("h1");
+      h1.textContent = "Hello, DOM!";
+    </script>
+  </body>
+</html>
+
+<!-- 2. <div> 요소를 새로 생성하여, 그 안에 "새로운 콘텐츠"라는 텍스트를 추가하고
+    <body>의 마지막 자식으로 삽입하세요. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>연습문제 2</title>
+  </head>
+  <body>
+    <script>
+      const div = document.createElement("div");
+      div.textContent = "새로운 콘텐츠";
+      document.body.appendChild(div);
+    </script>
+  </body>
+</html>
+
+<!-- 3. <p> 요소에 "highlight"라는 클래스를 추가하세요. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>연습문제 3</title>
+  </head>
+  <body>
+    <p>이 문단에 클래스를 추가합니다.</p>
+    <script>
+      const p = document.querySelector("p");
+      p.classList.add("highlight");
+    </script>
+  </body>
+</html>
+
+<!-- 4. <p> 요소에서 "highlight" 클래스를 제거하세요. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>연습문제 4</title>
+  </head>
+  <body>
+    <p class="highlight">이 문단에서 클래스를 제거하세요.</p>
+    <script>
+      const p2 = document.querySelector("p");
+      p2.classList.remove("highlight");
+    </script>
+  </body>
+</html>
+
+<!-- 5. <h2> 요소의 배경색을 "yellow"로 변경하세요. -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>연습 문제 5</title>
+  </head>
+  <body>
+    <h2>배경색을 변경하세요.</h2>
+    <script>
+      const h2 = document.querySelector("h2");
+      h2.style.backgroundColor = "yellow";
+    </script>
+  </body>
+</html>
+
+<!-- 6. <ul> 요소에 새로운 <li> 항목을 추가하세요. 추가된 항목의 내용은 "새로운 항목"입니다. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>연습문제 6</title>
+  </head>
+  <body>
+    <ul>
+      <li>기존 항목</li>
+    </ul>
+    <script>
+      const ul = document.querySelector("ul");
+      const li = document.createElement("li");
+      li.textContent = "새로운 항목";
+      ul.appendChild(li);
+    </script>
+  </body>
+</html>
+
+<!-- 7. `<a>` 요소의 `href` 속성을 "https://www.example.com"으로 변경하세요. -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 7</title>
+  </head>
+  <body>
+    <a href="#">링크</a>
+    <script>
+      const a = document.querySelector("a");
+      a.href = "https://www.example.com";
+    </script>
+  </body>
+</html>
+
+<!-- 8. <p> 요소를 DOM에서 삭제하세요. -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 8</title>
+  </head>
+  <body>
+    <p>삭제할 요소입니다.</p>
+    <script>
+      const p3 = document.querySelector("p");
+      p3.remove();
+    </script>
+  </body>
+</html>
+
+<!-- 9. <div> 요소의 텍스트 콘텐츠를 "새로운 텍스트"로 변경하세요. -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 9</title>
+  </head>
+  <body>
+    <div>기존 텍스트</div>
+    <script>
+      const div2 = document.querySelector("div");
+      div2.textContent = "새로운 텍스트";
+    </script>
+  </body>
+</html>
+
+<!-- 10. 템플릿 리터럴을 사용하여 다음과 같은 HTML 구조를 추가하세요. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문제 10</title>
+  </head>
+  <body>
+    <script>
+      const container = document.createElement("div");
+      container.innerHTML = `
+        <div class="card">
+          <h3>카드 제목</h3>
+          <p>카드 내용</p>
+        </div>
+      `;
+      document.body.appendChild(container);
+    </script>
+  </body>
+</html>
+
+<!-- 10. 템플릿 리터럴을 사용하여 다음과 같은 HTML 구조를 추가하세요. -->
+<!--<div class="card">
+  <h3>카드 제목</h3>
+  <p>카드 내용</p>
+</div>-->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 11</title>
+  </head>
+  <body>
+    <script>
+      const container2 = document.createElement("div");
+      container2.innerHTML = `
+        <div class="card">
+        <h3>카드 제목</h3>
+        <p>카드 내용</p>
+        </div>
+      `;
+      document.body.appendChild(container2);
+    </script>
+  </body>
+</html>
+
+<!-- 11. <p> 요소의 부모 요소를 찾고, 그 부모 요소의 배경색을 "lightgray"로 변경하세요. -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 12</title>
+  </head>
+  <body>
+    <div>
+      <p>이 요소의 부모를 찾고 배경색을 변경하세요.</p>
+    </div>
+    <script>
+      const p4 = document.querySelector("p");
+      const parent = p4.parentElement;
+      parent.style.backgroundColor = "lightgray";
+    </script>
+  </body>
+</html>
+
+<!-- 12. <ul> 요소의 첫 번째 자식으로 "첫 번째 항목"이라는 텍스트를 가진 <li> 요소를 추가하세요. -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 13</title>
+  </head>
+  <body>
+    <ul>
+      <li>기존 항목 1</li>
+      <li>기존 항목 2</li>
+    </ul>
+    <script>
+      const ul2 = document.querySelector("ul");
+      const li2 = document.createElement("li");
+      li2.textContent = "첫 번째 항목";
+      ul2.insertBefore(li2, ul2.firstChild);
+    </script>
+  </body>
+</html>
+
+<!-- 13. <p> 태그가 여러 개 있을 때, 모든 <p> 태그의 텍스트를 "모든 문단의 텍스트"로 변경하세요. -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 14</title>
+  </head>
+  <body>
+    <p>첫 번째 문단</p>
+    <p>두 번째 문단</p>
+    <script>
+      const paragraphs = document.querySelectorAll("p");
+      paragraphs.forEach((p) => {
+        p.textContent = "모든 문단의 텍스트";
+      });
+    </script>
+  </body>
+</html>
