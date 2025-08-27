@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 9</title>
+  </head>
+  <body>
+    <div>관리자</div>
+    <div>사용자</div>
+    <div>게스트</div>
+    <script>
+      const divs = document.querySelectorAll('div');
+
+      // Array.from(divs).find((item) => item.innerText === '사용자');
+
+      divs.forEach((item) => {
+        if (item.innerText === '사용자') [console.log(item)];
+      });
+    </script>
+  </body>
+</html>

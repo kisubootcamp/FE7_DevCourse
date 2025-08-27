@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .big {
+        font-size: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="list">
+      <li>하나</li>
+      <li id="target"><span> 둘 </span></li>
+      <li>셋</li>
+    </ul>
+    <script>
+      const liEl = document.querySelector('#target');
+      liEl.remove();
+
+      // const newLiEl = document.createElement('li');
+      // newLiEl.innerText = '넷';
+
+      // const ulEl = document.querySelector('#list');
+      // // ulEl.appendChild(newLiEl);
+      // ulEl.insertBefore(newLiEl, liEl);
+
+      // liEl.innerText = '<strong>둘!</strong>';
+
+      // liEl.classList.add('big');
+      // liEl.classList.remove('big');
+      // liEl.classList.toggle('big');
+
+      // liEl.style.color = 'red';
+      // liEl.style.textDecoration = 'line-through';
+
+      // liEl.setAttribute('class', 'big');
+      // liEl.removeAttribute('style');
+      // console.log(liEl.getAttribute('class'));
+
+      // console.log(liEl.parentNode);
+      // console.log(liEl.previousSibling);
+      // console.log(liEl.previousElementSibling);
+      // console.log(liEl.nextElementSibling);
+    </script>
+  </body>
+</html>

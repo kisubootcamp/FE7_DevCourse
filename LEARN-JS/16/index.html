@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #title {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="login-form">
+      <input type="text" name="email" value="asd" />
+    </form>
+    <form><input type="text" /></form>
+    <p>Lorem, ipsum.</p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores officia
+      doloribus qui maiores. Optio aspernatur exercitationem enim praesentium,
+      velit quasi quod corporis unde, fuga eos cupiditate est cum, accusamus
+      animi!
+    </p>
+    <a href="https://www.naver.com">네이버</a>
+    <a href="https://www.google.com">구글</a>
+    <h1 id="title">hello</h1>
+    <div>
+      <h1 class="title">hello</h1>
+    </div>
+    <h2 class="title">world</h2>
+    <script>
+      // get...
+      document.getElementsByClassName('title');
+      // query...
+      // querySelector, querySeletorAll
+      const form = document.forms['login-form'];
+      console.log(form.email.value);
+
+      console.log(document.querySelector("input[name='email']").value);
+
+      // const el = document.querySelectorAll('a[href="https://www.google.com"]');
+      // console.log(els);
+    </script>
+  </body>
+</html>
