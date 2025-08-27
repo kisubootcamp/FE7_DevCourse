@@ -37,7 +37,7 @@
 // 1.5.2 복사
 // 1.5.2.1 얕은 복사  -> 기본적으로 참조 데이터는 모두 얕은 복사
 // 1.5.2.2 깊은 복사
-// 1.5.2.2.1 JSON.parse(JSON.strigify(object))
+// 1.5.2.2.1 JSON.parse(JSON.stringify(object))
 // 1.5.2.2.2 structredClone()
 
 // 1.6 구조분해할당(비구조화할당)
@@ -45,7 +45,7 @@
 // 1.6.2 alias { user: usreName }
 
 // 1.7 JSON
-// 1.7.1 JSON.strigify() -> 원래의 데이터를 JSON 문자열로 변환
+// 1.7.1 JSON.stringify() -> 원래의 데이터를 JSON 문자열로 변환
 // 1.7.2 JSON.parse() -> JSON 문자열을 원래의 데이터로 변환
 
 // 1.8 객체의 속성 설명자
