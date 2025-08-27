@@ -1,0 +1,20 @@
+<!-- 13. querySelectorAll 사용하기 -->
+<!-- <p> 태그가 여러 개 있을 때, 모든 <p> 태그의 텍스트를 "모든 문단의 텍스트"로 변경하세요. -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 13</title>
+  </head>
+  <body>
+    <p>첫 번째 문단</p>
+    <p>두 번째 문단</p>
+    <script>
+      const pEls = document.querySelectorAll("p");
+      pEls.forEach((p) => {
+        p.innerText = "모든 문단의 텍스트";
+      });
+    </script>
+  </body>
+</html>
