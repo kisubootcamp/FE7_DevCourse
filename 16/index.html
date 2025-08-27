@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="./2.js"></script>
+    <style>
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1 id="title">Hello</h1>
+    <div><h1 class="red">Hello</h1></div>
+    <h2 class="red">World</h2>
+    <h2>World</h2>
+    <p>Lorem, ipsum.</p>
+    <a href="https://www.naver.com">네이버</a>
+    <a href="https://www.google.com">구글</a> -->
+    <form name="login-form">
+      <input type="text" name="email" value="email" />
+      <input type="text" name="pw" value="pw" />
+    </form>
+    <form name="signup-form"><input type="text" name="pw" value="1234" /></form>
+    <script>
+      // get***
+      document.getElementsByClassName("title");
+      // query***
+      // querySelector, querySelectorAll
+
+      // const el = document.querySelectorAll("a[href='https://www.google.com']");
+      const form = document.forms["login-form"];
+      console.log(form.email.value);
+      console.log(form.pw.value);
+
+      console.log(document.querySelector("input[name='email']").value);
+      console.log(document.querySelector("input[name='pw']").value);
+    </script>
+  </body>
+</html>

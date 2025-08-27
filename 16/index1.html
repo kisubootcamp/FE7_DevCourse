@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .big {
+        font-size: 50px;
+      }
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="list">
+      <li>하나</li>
+      <li id="target" class="red">
+        <span>둘</span>
+      </li>
+      <li>셋</li>
+    </ul>
+    <script>
+      const liEl = document.querySelector("#target");
+      liEl.remove();
+      // const newLi = document.createElement("li");
+      // newLi.innerText = "넷";
+
+      // const ulEl = document.querySelector("#list");
+      // ulEl.append(newLi);
+      // ulEl.insertBefore(newLi, ulEl.firstChild);
+      // liEl.parentNode.appendChild(newLi);
+
+      // liEl.innerHTML = "<strong>둘!</strong>";
+      // liEl.innerText = "<strong>둘!</strong>";
+
+      // liEl.setAttribute("class", "red big");
+      // liEl.classList.add("big");
+      // liEl.classList.remove("red");
+      // liEl.classList.toggle("red");
+      // liEl.classList.toggle("red");
+      // liEl.classList.toggle("red");
+      // console.log(liEl.classList.contains("red"));
+
+      // liEl.style.color = "red";
+      // liEl.style.textDecoration = "line-through";
+
+      // liEl.setAttribute("class", "big");
+      // liEl.removeAttribute("style");
+      // console.log(liEl.getAttribute("class"));
+      //   console.log(liEl.parentNode);
+      //   console.log(liEl.previousSibling);
+      //   console.log(liEl.previousElementSibling);
+      //   console.log(liEl.nextSibling);
+      //   console.log(liEl.nextElementSibling);
+      //
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 11</title>
+  </head>
+  <body>
+    <script>
+      const div = document.createElement("div");
+      div.setAttribute("class", "card");
+      const h3 = document.createElement("h3");
+      const p = document.createElement("p");
+      h3.innerText = "카드 제목";
+      p.innerText = "카드 내용";
+      div.appendChild(h3);
+      div.appendChild(p);
+
+      document.body.appendChild(div);
+    </script>
+  </body>
+</html>
