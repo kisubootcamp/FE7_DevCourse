@@ -10,6 +10,8 @@ const removeChar = (str, c) => {
   return result;
 };
 
+console.log(removeChar("hello world", "o")); // "hell wrld"
+
 // 2
 const reverseArray = (array) => {
   const newArr = [];
@@ -21,6 +23,8 @@ const reverseArray = (array) => {
   return newArr;
 };
 
+console.log(reverseArray([1, 2, 3, 4, 5]));
+
 // 3
 const containsNumber = (array, num) => {
   for (const x of array) {
@@ -30,25 +34,10 @@ const containsNumber = (array, num) => {
   return false;
 };
 
+console.log(containsNumber([1, 2, 3, 4, 5], 5)); // true
+console.log(containsNumber([1, 2, 3, 4, 5], 7)); // false
+
 // 4
-
-// const isAnagrams = (str1, str2) => {
-//   if (str1.length !== str2.length) return false;
-
-//   const map = {};
-
-//   for (let i = 0; i < str1.length; i++) {
-//     map[str1[i]] = (map[str1[i]] || 0) + 1;
-//     map[str2[i]] = (map[str2[i]] || 0) + 1;
-//   }
-
-//   for (const key in map) {
-//     if (map[key] !== 2) return false;
-//   }
-
-//   return true;
-// };
-
 const isAnagrams = (str1, str2) => {
   if (str1.length !== str2.length) return false;
 
@@ -66,6 +55,11 @@ const isAnagrams = (str1, str2) => {
   return true;
 };
 
+console.log(isAnagrams("listen", "silent")); // true
+console.log(isAnagrams("fluster", "restful")); // true
+console.log(isAnagrams("rat", "car")); // false
+console.log(isAnagrams("aaa", "aaaa")); // false
+
 // 5 O(n^2)
 const twiceSum = (array, num) => {
   const result = [];
@@ -78,3 +72,7 @@ const twiceSum = (array, num) => {
 
   return result;
 };
+
+console.log(twiceSum([1, 2, 3, 4, 5], 5)); // [[1, 4], [2,3]]
+console.log(twiceSum([1, 2, 3, 4, 5], 9)); // [[4, 5]]
+console.log(twiceSum([1, 2, 3, 4, 5], 6)); // [[1, 5], [2,4]]

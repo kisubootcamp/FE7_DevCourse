@@ -1,0 +1,72 @@
+<!-- Node 찾기 연습 문제 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Node 찾기 연습 문제</title>
+  </head>
+  <body>
+    <div>첫 번째 div</div>
+    <div>두 번째 div</div>
+    <div id="main-content">이것은 메인 콘텐츠입니다.</div>
+    <div class="item">아이템 1</div>
+    <div class="item">아이템 2</div>
+    <div class="item">아이템 3</div>
+    <div>
+      <p>본문 내용</p>
+      <span>이것은 span입니다</span>
+    </div>
+    <h2>헤딩 1</h2>
+    <h2>헤딩 2</h2>
+    <h2>헤딩 3</h2>
+    <div id="container">
+      <p>자식 요소 1</p>
+      <span>자식 요소 2</span>
+    </div>
+    <div data-role="admin">관리자</div>
+    <div data-role="user">사용자</div>
+    <div data-role="admin">관리자 2</div>
+    <div>관리자</div>
+    <div>사용자</div>
+    <div>게스트</div>
+    <ul>
+      <li>항목 1</li>
+      <li>항목 2</li>
+      <li>항목 3</li>
+    </ul>
+    <script>
+      // 1
+      console.log("1", document.querySelector("div"));
+
+      // 2
+      console.log("2", document.querySelector("#main-content"));
+
+      // 3
+      console.log("3", document.querySelectorAll(".item"));
+
+      // 4
+      console.log("4", document.querySelector("span").parentElement);
+
+      // 5
+      console.log("5", document.querySelector("p").nextElementSibling);
+
+      // 6
+      console.log("6", document.querySelectorAll("h2"));
+
+      // 7
+      console.log("7", document.querySelector("#container").children);
+
+      // 8
+      console.log("8", document.querySelectorAll(`[data-role="admin"]`));
+
+      // 9
+      const divs = document.querySelectorAll("div");
+      const result = [...divs].find((div) => div.innerText === "사용자");
+      console.log("9", result);
+
+      // 10
+      console.log("10", document.querySelector("li:nth-child(2)"));
+    </script>
+  </body>
+</html>

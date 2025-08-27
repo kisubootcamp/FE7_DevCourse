@@ -1,8 +1,8 @@
 /*
 
 if -> 표현식으로 조건 처리
-switch -> 값으로 조건 처리
 
+switch -> 값으로 조건 처리
 switch, case, break, default
 
 */
