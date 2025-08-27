@@ -206,10 +206,11 @@ class Book {
   static count = 0;
   constructor(b_Name) {
     this.name = b_Name;
-    this.count++;
+    Book.count++;
   }
   static getCount() {
     return Book.count;
+    // Book.count로 해야 인스턴스가 아닌 생성자 객체에 저장이 된다.
   }
 }
 

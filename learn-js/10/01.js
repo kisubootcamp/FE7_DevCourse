@@ -52,3 +52,4 @@ const p2 = new Person("kim", 20);
 console.log(p2); // 위 아래 결과가 동일하다
 console.log(p2.greet2());
 console.log(p2.sucoding);
+console.log(p2.getInfo());

@@ -5,6 +5,7 @@ class Person {
     this.#age = age;
   }
 
+  //프라이빗 필드일때 get/set을 함께 사용하는 경우는 없다.
   get age() {
     return this.#age;
   }

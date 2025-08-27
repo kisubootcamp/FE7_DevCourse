@@ -9,11 +9,13 @@
 // **기본 제공 코드**
 
 class Account {
-  #balance = 0;
+  //constructor는 인자를 받을 경우에 사용. 불필요하면 사용하지 않는다.
+  #balance = 0; //프라이빗 필드
   get balance() {
     return this.#balance;
   }
   deposit(amount) {
+    //if(typeof amount !== "number" || amount > 0) throw new Error("");
     if (amount > 0) {
       this.#balance += amount;
     } else {
@@ -55,7 +57,7 @@ class Vehicle {
 
 class Car extends Vehicle {
   constructor(name, brand) {
-    super();
+    super(name); //상속할 경우 필수! 인자 전달도 잊지말자.
     this.brand = brand;
   }
   info() {
@@ -110,7 +112,8 @@ class User {
     return `${this.first} ${this.last}`;
   }
   set fullName(str) {
-    const [first, last] = str.split(" ");
+    const [first, last] = str.split(" "); //변수 선언 필요 없이 바로 this에 넣어도 된다.
+    // [this.first, this.last] = str.split(" ");
     this.first = first;
     this.last = last;
   }
@@ -134,8 +137,10 @@ console.log(u.first, u.last); // 민수 김
 class QueryBuilder {
   constructor() {
     this.result = "";
+    //강사님 풀이: {select: "", from: "", where: ""}; 속성으로 관리
   }
   select(cols) {
+    //강사님 풀이: this.result.select = cols; 이하 비슷한 방식
     this.result += "SELECT " + cols;
     return this;
   }
