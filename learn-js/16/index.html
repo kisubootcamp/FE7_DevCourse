@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1 class="title">Hello</h1>
+		<h1 class="title red">Hello</h1>
+		<h2 class="red">World</h2>
+		<form name="login-form">
+			<input type="text" name="email" value="test" />
+			<input type="text" name="pw" value="test" />
+		</form>
+		<form name="signup-form">
+			<input type="text" name="pw" value="1234" />
+		</form>
+    <ul id="list">
+      <li>하나</li>
+      <li id="target">들</li>
+      <li>셋</li>
+    </ul>
+		<script>
+			// get***
+			const title = document.getElementsByClassName("title");
+			console.log(title);
+
+			// query***
+			// querySelector, querySeletorAll
+			const query = document.querySelector(".red");
+			const queryAll = document.querySelectorAll(".red");
+
+			// form 선택하기
+			const form = document.forms["login-form"];
+			console.log(form.email.value);
+			console.log(form.pw.value);
+
+      // 노드 다루기
+      const liEl = document.querySelector("#target");
+      console.log(liEl.parentNode)
+      console.log(liEl.previousSibling) // 왜 #text가 나오는가? html 파싱할 때 엔터도 #text로 포함함
+      console.log(liEl.previousElementSibling) // 여기선 원하는대로 li 나옴
+      // 형제노드를 선택할 때 엔터 안 치고 #text 안 나오게 하려면 previous/nextElementSibling 말고는 방법이 없나?
+
+      // 스타일 변경?
+      
+		</script>
+	</body>
+</html>
+
+<!--
+
+HTMLCollection, NodeList 차이점?
+둘다 유사배열객체
+
+별거 없는데 HTMLCollection은 forEach 쓸 수 없고
+NodeList는 forEach쓸 수 있다
+
+-->

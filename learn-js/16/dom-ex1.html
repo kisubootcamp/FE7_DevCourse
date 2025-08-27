@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DOM 연습문제</title>
+	</head>
+	<body>
+		<div class="quiz-1" title="문제1">
+			<!-- HTML 페이지에 있는 <h1> 태그의 텍스트를 "Hello, DOM!"으로 변경하세요. -->
+			<h1>기존 제목</h1>
+			<script>
+				document.querySelector(".quiz-1 h1").innerText = "Hello, DOM!";
+			</script>
+		</div>
+		<div class="quiz-2" title="문제2">
+			<!-- <div> 요소를 새로 생성하여, 그 안에 "새로운 콘텐츠"라는 텍스트를 추가하고 <body>의 마지막 자식으로 삽입하세요. -->
+			<script>
+				{
+					const div = document.createElement("div");
+					div.innerHTML = "새로운 콘텐츠";
+					document.querySelector(".quiz-2").append(div);
+				}
+			</script>
+		</div>
+		<div class="quiz-3" title="문제3">
+			<!-- <p> 요소에 "highlight"라는 클래스를 추가하세요. -->
+			<p>이 문단에 클래스를 추가하세요.</p>
+			<script>
+				{
+					const quiz3 = document.querySelector(".quiz-3");
+					quiz3.querySelector("p").classList.add("highlight");
+				}
+			</script>
+		</div>
+		<div class="quiz-4" title="문제4">
+			<!-- <p> 요소에 "highlight"라는 클래스를 제거하세요. -->
+			<p class="highlight">이 문단에서 클래스를 제거하세요.</p>
+			<script>
+				{
+					const quiz4 = document.querySelector(".quiz-4");
+					quiz4.querySelector("p").classList.remove("highlight");
+				}
+			</script>
+		</div>
+		<div class="quiz-5" title="문제5">
+			<!-- <h2> 요소의 배경색을 "yellow"로 변경하세요. -->
+			<h2>배경색을 변경하세요.</h2>
+			<script>
+				{
+					document.querySelector(".quiz-5 h2").style.background = "yellow";
+				}
+			</script>
+		</div>
+		<div class="quiz-6" title="문제6">
+			<!-- <ul> 요소에 새로운 <li> 항목을 추가하세요. 추가된 항목의 내용은 "새로운 항목"입니다. -->
+			<ul>
+				<li>기존 항목</li>
+			</ul>
+			<script>
+				{
+					const liEl = document.createElement("li");
+					liEl.innerText = "새로운 항목";
+					document.querySelector(".quiz-6 ul").append(liEl);
+				}
+			</script>
+		</div>
+		<div class="quiz-7" title="문제7">
+			<!-- <a> 요소의 href 속성을 "https://www.example.com"으로 변경하세요. -->
+			<a href="#">링크</a>
+			<script>
+				{
+					document
+						.querySelector(".quiz-7 > a")
+						.setAttribute("href", "https://www.example.com");
+				}
+			</script>
+		</div>
+		<div class="quiz-8" title="문제8">
+			<!-- <p> 요소를 DOM에서 삭제하세요. -->
+			<p>삭제할 요소입니다.</p>
+			<script>
+				{
+					document.querySelector(".quiz-8 > p").remove();
+				}
+			</script>
+		</div>
+		<div class="quiz-9" title="문제9">
+			<!-- <div> 요소의 텍스트 콘텐츠를 "새로운 텍스트"로 변경하세요. -->
+			<div>기존 텍스트</div>
+			<script>
+				{
+					document.querySelector(".quiz-9 > div").innerText = "새로운 텍스트";
+				}
+			</script>
+		</div>
+		<div class="quiz-10" title="문제10">
+			<!-- <div> 요소의 텍스트 콘텐츠를 "새로운 텍스트"로 변경하세요. -->
+			<script>
+				{
+					document.querySelector(".quiz-10").innerHTML = `<div class="card">
+  <h3>카드 제목</h3>
+  <p>카드 내용</p>
+</div>`;
+				}
+			</script>
+		</div>
+		<div class="quiz-11" title="문제11">
+			<!-- <p> 요소의 부모 요소를 찾고, 그 부모 요소의 배경색을 "lightgray"로 변경하세요. -->
+			<div>
+				<p>이 요소의 부모를 찾고 배경색을 변경하세요.</p>
+			</div>
+			<script>
+				{
+					document.querySelector(".quiz-11 p").parentElement.style.background =
+						"lightgray";
+				}
+			</script>
+		</div>
+		<div class="quiz-12" title="문제12">
+			<!-- <ul> 요소의 첫 번째 자식으로 "첫 번째 항목"이라는 텍스트를 가진 <li> 요소를 추가하세요. -->
+			<ul>
+				<li>기존 항목 1</li>
+				<li>기존 항목 2</li>
+			</ul>
+			<script>
+				{
+					const liEl = document.createElement("li");
+					liEl.innerText = "첫 번째 항목";
+					document.querySelector(".quiz-12 ul").prepend(liEl);
+				}
+			</script>
+		</div>
+		<div class="quiz-13" title="문제13">
+			<!-- <p> 태그가 여러 개 있을 때, 모든 <p> 태그의 텍스트를 "모든 문단의 텍스트"로 변경하세요. -->
+			<p>첫 번째 문단</p>
+			<p>두 번째 문단</p>
+			<script>
+				{
+					document.querySelectorAll(".quiz-13 > p").forEach((el) => {
+						el.innerText = "모든 문단의 텍스트";
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>노드 찾기 연습문제</title>
+	</head>
+	<body>
+		<div id="quiz1">
+			<!-- 페이지에서 첫 번째 <div> 요소를 찾아 콘솔에 출력하세요. -->
+			<div>첫 번째 div</div>
+			<div>두 번째 div</div>
+			<script>
+				{
+					console.log(document.querySelector("#quiz1 > div"));
+				}
+			</script>
+		</div>
+		<div id="quiz2">
+			<!-- id="main-content"인 요소를 찾아 콘솔에 출력하세요. -->
+			<div id="main-content">이것은 메인 콘텐츠입니다.</div>
+			<script>
+				{
+					console.log(document.querySelector("#main-content"));
+				}
+			</script>
+		</div>
+		<div id="quiz3">
+			<!-- class="item"을 가진 모든 요소를 찾아 콘솔에 출력하세요. -->
+			<div class="item">아이템 1</div>
+			<div class="item">아이템 2</div>
+			<div class="item">아이템 3</div>
+			<script>
+				{
+					console.log(document.querySelectorAll("#quiz3 > .item"));
+					// document
+					// 	.querySelectorAll("#quiz3 > .item")
+					// 	.forEach((el) => console.log(el));
+				}
+			</script>
+		</div>
+		<div id="quiz4">
+			<!-- <span> 요소의 부모 요소를 찾아 콘솔에 출력하세요. -->
+			<div>
+				<p>본문 내용</p>
+				<span>이것은 span입니다</span>
+			</div>
+			<script>
+				{
+					console.log(document.querySelector("#quiz4 span").parentElement);
+				}
+			</script>
+		</div>
+		<div id="quiz5">
+			<!-- <p> 요소의 형제 요소인 div 요소를 찾아 콘솔에 출력하세요. -->
+			<p>이것은 p 요소입니다.</p>
+			<div>이것은 div 요소입니다.</div>
+			<script>
+				{
+					console.log(document.querySelector("#quiz5 p").nextElementSibling);
+				}
+			</script>
+		</div>
+		<div id="quiz6">
+			<!-- 페이지에서 모든 <h2> 태그를 찾아 콘솔에 출력하세요. -->
+			<h2>헤딩 1</h2>
+			<h2>헤딩 2</h2>
+			<h2>헤딩 3</h2>
+			<script>
+				{
+					// console.log(document.querySelectorAll("#quiz6 h2"));
+					document
+						.querySelectorAll("#quiz6 h2")
+						.forEach((el) => console.log(el));
+				}
+			</script>
+		</div>
+		<div id="quiz7">
+			<!-- <div id="container"> 요소의 모든 자식 요소를 찾아 콘솔에 출력하세요. -->
+			<div id="container">
+				<p>자식 요소 1</p>
+				<span>자식 요소 2</span>
+			</div>
+			<script>
+				{
+					const children = document.querySelector("#quiz7 #container").children;
+					for (const child of children) {
+						console.log(child);
+					}
+				}
+			</script>
+		</div>
+		<div id="quiz8">
+			<!-- data-role="admin" 속성을 가진 모든 요소를 찾아 콘솔에 출력하세요. -->
+			<div data-role="admin">관리자</div>
+			<div data-role="user">사용자</div>
+			<div data-role="admin">관리자 2</div>
+			<script>
+				{
+					document
+						.querySelectorAll("#quiz8 [data-role='admin']")
+						.forEach((el) => console.log(el));
+				}
+			</script>
+		</div>
+		<div id="quiz9">
+			<!-- 텍스트 내용이 "사용자"인 요소를 찾아 콘솔에 출력하세요. -->
+			<div>관리자</div>
+			<div>사용자</div>
+			<div>게스트</div>
+			<script>
+				{
+					const divEl = document.querySelectorAll("#quiz9 > div");
+					const copyEl = Array.from(divEl);
+					console.log(copyEl.find((el) => el.innerText === "사용자"));
+				}
+			</script>
+		</div>
+		<div id="quiz10">
+			<!-- 두 번째 <li> 요소를 찾아 콘솔에 출력하세요. -->
+			<ul>
+				<li>항목 1</li>
+				<li>항목 2</li>
+				<li>항목 3</li>
+			</ul>
+			<script>
+				{
+					console.log(document.querySelector("#quiz10 li:nth-child(2)"));
+				}
+			</script>
+		</div>
+	</body>
+</html>
