@@ -164,3 +164,53 @@ function rotateArray(arr, steps) {
 const input = [1, 2, 3, 4, 5];
 console.log(rotateArray(input, 2)); // [4, 5, 1, 2, 3]
 console.log(rotateArray(input, -1)); // [2, 3, 4, 5, 1]
+
+//
+
+// 5
+// 두 배열이 주어졌을 때, 첫 번째 배열에는 있지만 두 번째 배열에는 없는 요소들을 반환하는 함수를 작성하세요.
+function arrayDifference(arr1, arr2) {
+  const set2 = new Set(arr2);
+  return arr1.filter((item) => !set2.has(item));
+}
+
+console.log(arrayDifference([1, 2, 3, 4, 5], [2, 4, 6]));
+// 출력: [1, 3, 5]
+
+console.log(arrayDifference([1, 1, 2, 2], [1, 2]));
+// 출력: []
+
+console.log(arrayDifference([1, 2, 3], []));
+// 출력: [1, 2, 3]
+
+console.log(arrayDifference([], [1, 2, 3]));
+// 출력: []
+
+console.log(arrayDifference([1, 2, 3], [4, 5, 6]));
+// 출력: [1, 2, 3]
+
+console.log(arrayDifference(["a", "b", "c"], ["a"]));
+// 출력: ['b', 'c']
+
+//
+
+// 6
+// 정수 배열이 주어졌을 때, 연속된 부분 배열의 합이 최대가 되는 값을 찾는 함수를 작성하세요.
+function maxSubArraySum(arr) {
+  // 여기에 코드를 작성하세요
+}
+
+const input1 = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+console.log(maxSubArraySum(input1)); // 6 ([4, -1, 2, 1])
+
+const input2 = [-1, -2, -3, -4];
+console.log(maxSubArraySum(input2)); // -1 ([-1])
+
+const input3 = [1, 2, 3, 4, 5];
+console.log(maxSubArraySum(input3)); // 15 ([1, 2, 3, 4, 5])
+
+const input4 = [1, -1, 1, -1, 1, -1, 1];
+console.log(maxSubArraySum(input4)); // 1 ([1])
+
+const input5 = [-2, -3, 4, -1, -2, 1, 5, -3];
+console.log(maxSubArraySum(input5)); // 7 ([4, -1, -2, 1, 5])
