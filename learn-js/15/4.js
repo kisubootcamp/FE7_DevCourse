@@ -14,8 +14,8 @@ const promise = new Promise((resolve, reject) => {
     // 작업이 실패하면 reject 호출
     console.log("promise created");
     setTimeout(() => {
-        // resolve("task1");
-        reject("실패함");
+        resolve("task1");
+        // reject("실패함");
     }, 1000)
 });
 
@@ -30,3 +30,5 @@ promise.then((value) => {
         console.log(reason);
     }
 )
+
+console.log("ended");

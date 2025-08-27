@@ -1,7 +1,7 @@
 const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
-        // resolve("kim");
-        reject(new Error("실패함"));
+        resolve("kim");
+        //reject(new Error("실패함"));
     }, 1000)
 })
 
