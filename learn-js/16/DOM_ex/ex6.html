@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 6</title>
+  </head>
+  <body>
+    <ul>
+      <li>기존 항목</li>
+    </ul>
+    <script>
+      const plus = document.createElement("li");
+      plus.innerText = "새로운 항목";
+      const parent = document.querySelector("ul");
+      parent.appendChild(plus);
+      // parent.append("000", <li></li>) 이런 노드 말고 문자열도 삽입 가능
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 12</title>
+  </head>
+  <body>
+    <ul>
+      <li>기존 항목 1</li>
+      <li>기존 항목 2</li>
+    </ul>
+    <script>
+      const ul = document.querySelector("ul");
+      const li = document.createElement("li");
+      const firstChild = document.querySelector("li:nth-child(1)");
+      // firstElementChild로 찾아도 됨
+      li.innerText = "첫 번째 항목";
+      ul.insertBefore(li, firstChild);
+    </script>
+  </body>
+</html>
