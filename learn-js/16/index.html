@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="./02.js"></script>
+  </head>
+  <body>
+    <h1 id="title">Hello</h1>
+    <h2>world</h2>
+    <p>Lorem, ipsum</p>
+    <ul id="list">
+      <li>하나</li>
+      <li id="target">둘</li>
+      <li>셋</li>
+    </ul>
+    <script>
+      // get***
+      const el = document.getElementById("title");
+      // query***
+      //querySelector, querySelectorAll
+      // document.querySelector(".red")
+      //   const form = document.forms["login-form"];
+      //   console.log(form.email.value);
+      //   console.log(from.pw.value);
+      //   console.log(document.querySelector("input[name='email']").value);
+
+      const liEl = document.querySelector("#target");
+
+      //   console.log(liEl.parentNode);
+      //   console.log(liEl.previousSibling); // 뒤에 공백이 있기 때문에 공백에 대한 게 나옴
+      //   console.log(liEl.previousElementSibling); // 요소 전용이라 전이 나옴
+      //   console.log(liEl.nextSibling); // 얘도 previou랑 같음
+      //   console.log(liEl.nextElementSibling); // 그래서 얘로 요소 구해야지 다음 요소가 나옴
+
+      //
+
+      // 스타일 조작하는 것
+      //   liEl.style.color = "red";
+      //   liEl.style.textDecoration = "line-through";
+
+      //
+
+      //속성 추가하는 것
+      //   liEl.setAttribute("class", "big"); // class를 이름을 big으로 추가하는 것
+
+      // 스타일 등등 제거하는 것
+      //   liEl.removeAttribute("style");
+
+      // 스타일 가져오는 것
+      //   console.log(liEl.getAttribute("class"));
+
+      //
+
+      // 특정 클래스 추가
+      // setAttribute랑 다른 점은 기존에 있던 클래스에 추가로 넣어줌(setAttribute는 기존에 있던 걸 덮어버림)
+      //   liEl.classList.add("big");
+
+      // 특정 클래스 삭제
+      //   liEl.classList.remove("red");
+
+      // 있으면 없게 만들고, 없으면 있게 만드는 것
+      //   liEl.classList.toggle("red");
+
+      // 있는지 true, false로 보여주는 것
+      //   console.log(liEl.classList.contains("red"));
+
+      // 다 보여주는 innerHTML
+      // 그래서 이런 식으로 통째로 변경 가능
+      //   liEl.innerHTML = "<strong>둘!</strong>";
+
+      // text만 보여주는 innerText라 text 부분만 바꿔줌
+      //   liEl.innerText = "<strong>둘!</strong>";
+
+      //
+
+      //   const newLiEl = document.createElement("li"); // 만들기만 하고 아직은 연결을 안 한 상태
+      //   newLiEl.innerText = "넷";
+      //   const ulEl = document.querySelector("#list"); // 부모를 가져온 것
+      //   ulEl.appendChild(newLiEl); // 가져온 부모의 맨 마지막 자식으로 추가하는 것
+      // 중간으로 넣고 싶다면?
+      //   ulEl.insertBefore(newLiEl, liEl); //(넣을 애, 어떤 애 앞에 두고 싶은 애)
+      //   console.log(newLiEl);
+      // 지우고 싶다면?
+      // liEl.remove();
+    </script>
+  </body>
+</html>

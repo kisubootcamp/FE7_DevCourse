@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 14</title>
+  </head>
+  <body>
+    <p>첫 번째 문단</p>
+    <p>두 번째 문단</p>
+    <script>
+      const ps = document.querySelectorAll("p");
+      ps.forEach((el) => {
+        el.innerText = "모든 문단의 텍스트";
+      }); // query의 NodeList는 배열로 나옴, 그걸 이용해서 순회하면서 하나씩 할당
+      console.log(ps);
+    </script>
+  </body>
+</html>
