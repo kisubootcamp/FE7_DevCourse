@@ -24,10 +24,11 @@ class Person {
     console.log("구식 안녕");
   };
 
-  // 단축 함수
+  // 단축 함수 
   greets() {
     console.log("단축 안녕");
   }
+  // 프로토타입 없이도 자식 객체에 함수를 상속
 }
 
 const jiho = new Person("hi", 27);

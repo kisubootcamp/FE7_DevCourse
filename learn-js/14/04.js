@@ -11,3 +11,5 @@ console.log(Math.floor(Math.random() * (15 - 5 + 1)) + 5); // 5 이상 ~ 15 이�
 
 // Math.random() * (B - A) + A; // A이상 B미만 실수
 console.log(Math.random() * (4.5 - 1.5) + 1.5); // 1.5 이상 ~ 4.5 미만 실수
+
+//max, min, floor

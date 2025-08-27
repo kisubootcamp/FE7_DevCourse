@@ -1,7 +1,7 @@
 // 클래스에서의 게터세터
 
 class Person {
-  #age; // 샵 필드, private
+  #age; // 샵 필드, private | ES2022부터 지원
   constructor(lastName, firstName) {
     this.lastName = lastName;
     this.firstName = firstName;

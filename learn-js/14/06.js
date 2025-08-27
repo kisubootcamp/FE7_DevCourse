@@ -16,4 +16,4 @@ console.log(/abc/.test("11abcde1"));
 
 //.match()
 //일치하는 배열 반환
-console.log("123abd1234".match(/ab/g));
+console.log("123abd1234".match(/ab/g)); //global 플래그가 없으면, 가장 먼저 일치하는 ab에 대한 정보만 나옴
