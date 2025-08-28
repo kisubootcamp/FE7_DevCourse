@@ -1,0 +1,66 @@
+<!-- 23. 이벤트
+* DOM 연습문제 :: 노션으로 정답 확인하기 -->
+
+<!-- 1. 버튼 클릭 시 텍스트 변경 **
+버튼을 클릭하면 특정 `<p>` 태그의 텍스트를 변경합니다. -->
+
+<p id="text">원래 텍스트</p>
+<button id="changeTextButton">텍스트 변경</button>
+<script>
+  document.querySelector("#text").addEventListener("click", function (){
+    // 텍스트 변경
+  });
+</script>
+
+
+<!-- 2. 배경색 변경 *
+버튼을 클릭하면 페이지의 배경색을 랜덤 색상으로 변경합니다. 
+(랜덤 색상은 ‘#’+Math.floor(Math.random()*16777215).toString(16)) 로직을 쓰세요. -->
+
+<button id="changeColorButton">배경색 변경</button>
+<script>
+  document.querySelector("#changeColorButton").addEventListener("click", function () {
+    const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+    document.querySelector("body").style.backgroundColor = randomColor;
+  });
+</script>
+
+
+<!-- 3. 리스트 항목 추가 **
+입력창에서 텍스트를 받아 새로운 리스트 항목을 추가합니다. -->
+
+<input type="text" id="itemInput" placeholder="새 항목 입력">
+<button id="addItemButton">항목 추가</button>
+<ul id="itemList"></ul>
+
+<script>
+  // 텍스트를 받고 / 리스트를 추가 -> 받은 텍스트를 리스트에 연결 -> 어떻게?
+  const inputText = document.querySelector("input.text"); 
+  // 버튼을 누를 때 함수가 실행
+  document.querySelector("#addItemButton").addEventListener("click", function (text) {
+    const newLi = document.createElement("li");
+    newLi.innerText = inputText; // addEventListener 어디서 가져올거지?? 변수에 담아야 가져오지
+
+    document.querySelector("#itemList").appendChild(newLi);
+    //빈 리스트 생성됨 : inputText 문제라고 생각
+  })
+
+</script>
+
+
+<!-- 4. 특정 항목 삭제 **
+리스트의 특정 항목을 클릭하면 그 항목을 삭제합니다. -->
+
+<ul id="itemList">
+    <li>항목 1</li>
+    <li>항목 2</li>
+    <li>항목 3</li>
+</ul>
+<script>
+  // 클릭, 삭제
+  document.querySelector("li").addEventListener("click", function(){
+    document.querySelector("li").remove("li");
+  })
+  // 눌러진 그 리스트를 삭제해야 됨
+  // 첫 번째거 하나만 삭제됨
+</script>

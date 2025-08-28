@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 20px;
+      }
+      #content {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin-top: 10px;
+        border-radius: 6px;
+      }
+      button {
+        margin-right: 8px;
+        padding: 6px 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>History API 학습 예제</h1>
+    <p>
+      아래 버튼을 눌러 페이지 상태를 바꾸고, 브라우저
+      <strong>뒤로/앞으로 버튼</strong>도 눌러보세요!
+    </p>
+    <button onclick="loadPage('home')">홈</button>
+    <button onclick="loadPage('about')">소개</button>
+    <button onclick="loadPage('contact')">연락처</button>
+    <div id="content">여기는 기본 홈 화면입니다.</div>
+
+    <script>
+      const content = document.querySelector("#content");
+      function loadPage(page) {
+        const texts = {
+          home: "/pages/home.html",
+          about: "이 페이지는 소개 화면 입니다.",
+          contact: "이 페이지는 연락처 화면입니다.",
+        };
+        content.innerText = texts[page];
+        //const res = await fetch(texts[page]); //38 줄로 인해 추가 (다른 방법, html파일을 불러오는) : 근데 지금 안 댐..
+        //content.innerHTML = await res.text();
+
+        // 여기까지만 하면 뒤로가기 앞으로가기가 안 됨
+        history.pushState({ page: page }, null, `/${page}`);
+      }
+
+        // history 조작으로 url이 변화하는 것처럼 보임, 실제로는 한 페이지임 == SPA
+        // 여기까지만 하면 주소는 변하는데 버튼 눌러도 글자가 안 변함.?
+        window.addEventListener("popstate", function (event) {
+          console.log(event);
+          const page = event.state?.page || "home";
+          const texts = {
+          home: "여기는 홈 화면입니다",
+          about: "이 페이지는 소개 화면 입니다.",
+          contact: "이 페이지는 연락처 화면입니다.",
+          };
+          content.innerText = texts[page];
+        });
+        // 계속 에러 나는거 라이브 서버 다시 실행 / 새로고침
+
+    </script>
+  </body>
+</html>
