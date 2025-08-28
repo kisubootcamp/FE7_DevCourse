@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>이벤트</h1>
+    <button>클릭</button>
+    <button id="cancel">이벤트 해제</button>
+    <script>
+      // 이벤트 타겟
+      const target = document.querySelector("button");
+      const cancelBtn = document.querySelector("#cancel");
+
+      const mouseEnterHandler = function () {
+        console.log("mouseenter");
+        console.log(this);
+        this.style.color = "red";
+      };
+      const mouseLeaveHandler = function () {
+        console.log("mouseleave");
+        console.log(this);
+        this.style.color = "";
+      };
+
+      // 이벤트 타입 (click)
+      target.addEventListener("mouseenter", mouseEnterHandler);
+
+      target.addEventListener("mouseleave", mouseLeaveHandler);
+
+      cancelBtn.addEventListener("click", function () {
+        target.removeEventListener("mouseenter", mouseEnterHandler);
+        target.removeEventListener("mouseleave", mouseLeaveHandler);
+      });
+    </script>
+  </body>
+</html>

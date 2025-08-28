@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="itemList">
+      <li>항목 1</li>
+      <li>항목 2</li>
+      <li>항목 3</li>
+    </ul>
+    <script>
+      const ul = document.querySelector("ul");
+      const lis = document.querySelectorAll("li");
+      console.log(lis);
+
+      for (const li of lis) {
+        li.addEventListener("click", function () {
+          ul.removeChild(li);
+        });
+      }
+    </script>
+  </body>
+</html>
