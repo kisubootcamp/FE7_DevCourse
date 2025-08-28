@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button class="tab" data-target="tab1">탭 1</button>
+      <button class="tab" data-target="tab2">탭 2</button>
+    </div>
+    <div id="tab1" class="tab-content" style="display: none">탭 1 내용</div>
+    <div id="tab2" class="tab-content" style="display: none">탭 2 내용</div>
+
+    <script>
+      const btns = document.querySelectorAll("button");
+      const tab1 = document.querySelector("#tab1");
+      const tab2 = document.querySelector("#tab2");
+
+      btns[0].addEventListener("click", function () {
+        tab1.style = "display: open";
+        tab2.style = "display: none";
+      });
+
+      btns[1].addEventListener("click", function () {
+        tab1.style = "display: none";
+        tab2.style = "display: open";
+      });
+    </script>
+  </body>
+</html>

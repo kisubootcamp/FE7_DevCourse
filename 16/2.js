@@ -1,0 +1,46 @@
+// 1. 자바스크립트
+// 1.1 자바스크립트 자체적으로 내장되어있는 API
+// 1.1.1 Object (객체)
+// 1.1.1.1 String
+// 1.1.1.2 Function
+// 1.1.1.3 Number ...
+
+// 1.2 브라우저에서 제공해주는 API
+// 1.2.1 window (객체) [window.alert 이렇게 안적어도 됨!]
+// 1.2.1.1 BOM(Browser Object Models)
+// 1.2.1.1.1 navigator
+// 1.2.1.1.2 screen
+// 1.2.1.1.3 location
+// 1.2.1.1.4 history
+// 1.2.1.1.5 document -> DOM(document object model)
+
+// 1.3 BOM
+// 1.3.1 window
+// 1.3.1.1 alert(message)
+// 1.3.1.2 confirm(message)
+// 1.3.1.3 prompt(message, default)
+// 1.3.1.4 setTimeout <-> clearTimeout
+// 1.3.1.5 setInterval <-> clearInterval
+
+// 1.3.2 navigator
+// console.log(window.navigator.userAgent);
+
+// 1.3.3 screen
+// 1.3.3.1 width, height, availWidth, availHeight
+// 1.3.3.2 availWidth, availHeight: 주소표시줄, 상단바, 독,, 등은 제게한 넓이
+// console.log(window.screen.width);
+// console.log(window.screen.height);
+// console.log(window.screen.availWidth); // 사용 가능한 화면의 넓이
+// console.log(window.screen.availHeight); // 사용 가능한 화면의 높이
+
+// 1.3.4 location
+// console.log(window.location);
+// window.location.href = "https://naver.com";
+// window.location.assign("https://naver.com");
+// window.location.reload();
+
+// let count = 0;
+// const interval = window.setInterval(() => {
+//   console.log(count++);
+//   if (count === 5) clearInterval(interval);
+// }, 1000);
