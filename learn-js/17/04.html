@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>키보드 이벤트 예제</title>
+	</head>
+	<body>
+		<input type="text" id="inputField" placeholder="여기에 입력하세요..." />
+		<div id="keyOutput"></div>
+
+		<script>
+			const inputField = document.getElementById("inputField");
+			const keyOutput = document.getElementById("keyOutput");
+
+			inputField.addEventListener("keydown", function (event) {
+				keyOutput.textContent = `누른 키: ${event.key}`;
+				const allowed = /[a-zA-Z0-9ㄱ-ㅎ가-힣]/;
+				if (event.key.length === 1 && !allowed.test(event.key)) {
+					event.preventDefault();
+					alert("특수문자는 입력할 수 없습니다.");
+				}
+			});
+
+			inputField.addEventListener("keyup", function (event) {
+				console.log(event);
+				keyOutput.textContent += ` (뗀 키: ${event.key})`;
+			});
+
+      // 나한텐 왜 Process가 뜰까? 흠냐링
+		</script>
+	</body>
+</html>

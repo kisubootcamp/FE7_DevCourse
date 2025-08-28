@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="quiz1">
+			<!-- 설명: 버튼을 클릭하면 특정 <p> 태그의 텍스트를 변경합니다. -->
+			<h2>Q1</h2>
+			<p id="text">원래 텍스트</p>
+			<button id="changeTextButton">텍스트 변경</button>
+			<script>
+				{
+					const doc = document.getElementById("quiz1");
+					const p = doc.querySelector("#text");
+					const btn = doc.querySelector("#changeTextButton");
+
+					btn.addEventListener("click", function () {
+						p.innerText = "텍스트 변경";
+					});
+				}
+			</script>
+		</div>
+		<div id="quiz2">
+			<!-- 설명: 버튼을 클릭하면 페이지의 배경색을 랜덤 색상으로 변경합니다. (랜덤 색상은 ‘#’+Math.floor(Math.random()*16777215).toString(16)) 로직을 쓰세요. -->
+			<h2>Q2</h2>
+			<button id="changeColorButton">배경색 변경</button>
+			<script>
+				{
+					const doc = document.getElementById("quiz2");
+					const btn = doc.querySelector("#changeColorButton");
+
+					btn.addEventListener("click", function () {
+						this.style.backgroundColor =
+							"#" + Math.floor(Math.random() * 16777215).toString(16);
+					});
+				}
+			</script>
+		</div>
+		<div id="quiz3">
+			<!-- 설명: 입력창에서 텍스트를 받아 새로운 리스트 항목을 추가합니다. -->
+			<h2>Q3</h2>
+			<input type="text" id="itemInput" placeholder="새 항목 입력" />
+			<button id="addItemButton">항목 추가</button>
+			<ul id="itemList"></ul>
+			<script>
+				{
+					const doc = document.getElementById("quiz3");
+					const input = doc.querySelector("#itemInput");
+					const btn = doc.querySelector("#addItemButton");
+					const ul = doc.querySelector("#itemList");
+
+					btn.addEventListener("click", function () {
+						if (input.value === "") {
+							alert("텍스트상자에 텍스트를 입력하세요");
+						} else {
+							const li = document.createElement("li");
+							li.innerText = input.value;
+							ul.append(li);
+						}
+					});
+				}
+			</script>
+		</div>
+		<div id="quiz4">
+			<!-- 설명: 리스트의 특정 항목을 클릭하면 그 항목을 삭제합니다. -->
+			<h2>Q4</h2>
+			<ul id="itemList">
+				<li>항목 1</li>
+				<li>항목 2</li>
+				<li>항목 3</li>
+			</ul>
+			<script>
+				{
+					const doc = document.getElementById("quiz4");
+					const lis = doc.querySelectorAll("#itemList > li");
+
+					lis.forEach((li) => {
+						li.addEventListener("click", function (e) {
+							this.remove();
+						});
+					});
+				}
+			</script>
+		</div>
+		<div id="quiz5">
+			<!-- 설명: 버튼을 클릭하면 이미지의 소스를 변경합니다. -->
+			<h2>Q5</h2>
+			<img id="image" src="image1.png" alt="이미지" style="width: 200px" />
+			<button id="changeImageButton">이미지 변경</button>
+			<script>
+				{
+					const doc = document.getElementById("quiz5");
+					const img = doc.querySelector("#image");
+					const btn = doc.querySelector("#changeImageButton");
+
+					btn.addEventListener("click", function (e) {
+						img.setAttribute("src", "image2.png");
+					});
+				}
+			</script>
+		</div>
+		<div id="quiz6">
+			<!-- 설명: 버튼을 클릭하면 모달을 열고, 모달 안의 버튼을 클릭하면 모달을 닫습니다. -->
+			<h2>Q6</h2>
+			<button id="openModalButton">모달 열기</button>
+			<div id="modal" style="display: none">
+				<div>모달 내용</div>
+				<button id="closeModalButton">닫기</button>
+			</div>
+			<script>
+				{
+					const doc = document.getElementById("quiz6");
+					const modal = doc.querySelector("#modal");
+					const btnOpen = doc.querySelector("#openModalButton");
+					const btnClose = doc.querySelector("#closeModalButton");
+
+					doc.addEventListener("click", function (e) {
+						if (e.target === btnOpen) modal.style.display = "block";
+						if (e.target === btnClose) modal.style.display = "none";
+					});
+				}
+			</script>
+		</div>
+		<div id="quiz7">
+			<!-- 설명: 폼을 제출하면 이름을 포함한 경고 메시지를 표시합니다. -->
+			<h2>Q7</h2>
+			<form id="myForm">
+				<input type="text" name="name" placeholder="이름 입력" />
+				<button type="submit">제출</button>
+			</form>
+			<script>
+				{
+					const doc = document.getElementById("quiz7");
+					const input = doc.querySelector("#myForm input");
+					const btn = doc.querySelector("#myForm button");
+
+					btn.addEventListener("click", function (e) {
+						e.preventDefault();
+						if (input.value === "") alert("이름을 입력하세요");
+						else {
+							alert(`폼이 제출되었습니다! 이름: ${input.value}`);
+							input.value = "";
+						}
+					});
+				}
+			</script>
+		</div>
+		<div id="quiz8">
+			<!-- 설명: 체크박스를 클릭하면 비밀번호 입력 필드의 내용을 표시하거나 숨깁니다. -->
+			<h2>Q8</h2>
+			<input type="password" id="passwordInput" />
+			<input type="checkbox" id="showPassword" /> 비밀번호 보기
+			<script>
+				{
+					const doc = document.getElementById("quiz8");
+					const pw = doc.querySelector("#passwordInput");
+					const btn = doc.querySelector("#showPassword");
+
+					btn.addEventListener("click", function (e) {
+						if (pw.type === "password") pw.setAttribute("type", "text");
+						else if (pw.type === "text") pw.setAttribute("type", "password");
+					});
+				}
+			</script>
+		</div>
+		<div id="quiz9">
+			<!-- 설명: 버튼 클릭 시 요소의 크기를 애니메이션으로 변경합니다. -->
+			<h2>Q9</h2>
+			<div id="box" style="width: 100px; height: 100px; background: red"></div>
+			<button id="animateButton">애니메이션 시작</button>
+			<script>
+				{
+					const doc = document.getElementById("quiz9");
+					const box = doc.querySelector("#box");
+					const btn = doc.querySelector("#animateButton");
+
+					btn.addEventListener("click", function (e) {
+						box.animate(
+							[
+								{ width: "100px", height: "100px" },
+								{ width: "200px", height: "200px" },
+							],
+							{ duration: 2000, easing: "ease-in-out", fill: "forwards" },
+						);
+					});
+				}
+			</script>
+		</div>
+		<div id="quiz10">
+			<!-- 설명: 여러 탭 중 하나를 클릭하면 해당 탭의 내용만 표시합니다. -->
+			<h2>Q10</h2>
+			<div>
+				<button class="tab" data-target="tab1">탭 1</button>
+				<button class="tab" data-target="tab2">탭 2</button>
+			</div>
+			<div id="tab1" class="tab-content" style="display: none">탭 1 내용</div>
+			<div id="tab2" class="tab-content" style="display: none">탭 2 내용</div>
+			<script>
+				{
+					const doc = document.getElementById("quiz10");
+					const btns = doc.querySelectorAll("button");
+
+					btns.forEach((btn) => {
+						btn.addEventListener("click", function () {
+							const tabData = btn.dataset.target;
+							document.querySelector(
+								`.tab-content:not(#${tabData})`,
+							).style.display = "none";
+							document.querySelector(`#${tabData}`).style.display = "block";
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

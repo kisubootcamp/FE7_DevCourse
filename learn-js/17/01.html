@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>이벤트</h1>
+		<button>클릭</button>
+		<button id="cancel">이벤트 해제</button>
+		<script>
+			// 이벤트 타겟
+			const target = document.querySelector("button");
+			const cancelBtn = document.querySelector("#cancel");
+			const moustEnterHandler = function () {
+				console.log(this);
+				console.log("mouseenter");
+				this.style.color = "red";
+			};
+			// 화살표 함수로 작성하게 될 경우 this가 window객체를 가리키게 됨
+			const moustLeaveHandler = () => {
+				console.log(this);
+				console.log("mouseleave");
+				this.style.color = "blue"; // 그래서 요부분에 에러가 남
+			};
+
+			// 이벤트 타입(click)
+			target.addEventListener("mouseenter", moustEnterHandler);
+			target.addEventListener("mouseleave", moustLeaveHandler);
+
+			cancelBtn.addEventListener("click", function () {
+				target.removeEventListener("mouseenter", moustEnterHandler);
+				target.removeEventListener("mouseleave", moustLeaveHandler());
+			});
+		</script>
+	</body>
+</html>

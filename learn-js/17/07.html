@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<ul>
+			<li>첫 번째 항목</li>
+			<li>두 번째 항목</li>
+		</ul>
+		<button>추가</button>
+		<script>
+			const ulEl = document.querySelector("ul");
+			ulEl.addEventListener("click", function (e) {
+        // 이벤트를 li에 걸고싶지만 li 선택해서 foreach문 돌리면 새롭게 추가된 항목엔 되지않음
+        // 그래서 부모요소에 클릭이벤트를 걸고 버블링을 활용함
+				if (event.target.tagName === "LI")
+					if (event.target.style.textDecoration === "line-through")
+						event.target.style.textDecoration = "";
+					else event.target.style.textDecoration = "line-through";
+			});
+
+			const buttonEl = document.querySelector("button");
+			buttonEl.addEventListener("click", function () {
+				const liEl = document.createElement("li");
+				liEl.innerText = "새로운 항목";
+
+				const ulEl = document.querySelector("ul");
+				ulEl.appendChild(liEl);
+			});
+		</script>
+	</body>
+</html>
