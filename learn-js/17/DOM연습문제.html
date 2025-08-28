@@ -1,0 +1,66 @@
+<!-- 1 -->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="text">원래 텍스트</p>
+    <button id="changeTextButton">텍스트 변경</button>
+
+    <script>
+      document
+        .querySelector("#changeTextButton")
+        .addEventListener("click", function () {
+          const el = document.querySelector("#text");
+          el.textContent = "새로운 텍스트";
+        });
+    </script>
+  </body>
+</html>
+
+<!-- 2 -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="changeColorButton">배경색 변경</button>
+    <script>
+      const colorBtn = document.querySelector("#changeColorButton");
+      colorBtn.addEventListener("click", function () {
+        document.body.style.backgroundColor =
+          "#" + Math.floor(Math.random() * 16777215).toString(16);
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 3 -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="itemInput" placeholder="새 항목 입력" />
+    <button id="addItemButton">항목 추가</button>
+    <ul id="itemList"></ul>
+    <script>
+      const addItemBtn = document.querySelector("#addItemButton");
+      addItemBtn.addEventListener("click", function () {
+        const ulEl = document.querySelector("#itemList");
+        const liEl = document.createElement("li");
+        liEl.textContent = document.querySelector("#itemInput").value;
+        ulEl.appendChild(liEl);
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 4 -->

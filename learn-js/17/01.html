@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>이벤트</h1>
+    <button>클릭</button>
+    <button id="cancel">이벤트 제거</button>
+    <script>
+      const target = document.querySelector("button");
+      const cancelBtn = document.querySelector("#cancel");
+
+      target.addEventListener("click", function () {
+        console.log("클릭!");
+      });
+
+      // 이벤트 핸들러를 변수로
+      const mouseEnterHandler = function () {
+        console.log("mouseenter");
+      };
+
+      // 이벤트 리스너 등록(핸들러는 변수)
+      target.addEventListener("mouseenter", mouseEnterHandler);
+
+      // remove로 이벤트 리스너를 지우는건, 이벤트 핸들러를 지우는 행위
+      // 따라서 지우려면 이벤트 핸들러를 변수로 만들어야 한다
+      cancelBtn.addEventListener("click", function () {
+        target.removeEventListener("mouseenter", mouseEnterHandler);
+      });
+    </script>
+  </body>
+</html>

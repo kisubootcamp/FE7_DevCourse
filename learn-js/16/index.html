@@ -1,0 +1,17 @@
+<html>
+  <head> </head>
+  <body>
+    <!-- html은 줄바꿈도 text노드로 인식 -->
+    <form name="login-form">
+      <input type="text" name="email" value="test" />
+    </form>
+    <script>
+      // form 이용
+      const form = document.forms["login-form"];
+      console.log(form.email.value);
+
+      //쿼리 셀럭터 이용
+      console.log(document.querySelector("input[name='email']").value);
+    </script>
+  </body>
+</html>
