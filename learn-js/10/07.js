@@ -22,9 +22,8 @@ class Developer extends Person {
   }
 }
 
-const dev1 = new Developer("kim", 20, "JS");
+const dev1 = new Developer("park", 30, "JS");
 console.dir(dev1.greet());
 console.dir(dev1.coding());
-
 console.log(dev1 instanceof Developer);
 console.log(dev1 instanceof Person);

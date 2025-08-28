@@ -20,4 +20,4 @@ const drive3 = new Car("현대", "제네시스", "2022년식");
 console.log(drive1);
 console.log(drive2);
 console.log(drive3);
-console.log(car1.drive()); //프로토타입 체인, 프로토타입 체이닝
+console.log(drive1.drive()); //프로토타입 체인, 프로토타입 체이닝

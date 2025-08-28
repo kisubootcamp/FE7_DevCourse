@@ -4,7 +4,7 @@ function Animal(name) {
   this.name = name;
 }
 Animal.prototype.speak = function () {
-  return `${this.nmae} makes a sound`;
+  return `${this.name} makes a sound`;
 };
 
 function Dog(name, age) {
