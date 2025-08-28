@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>첫 번째 항목</li>
+    <li>두 번째 항목</li>
+  </ul>
+  <button>추가</button>
+  <script>
+    // 동적 추가 요소에 이벤트 적용이 안 됨
+    const liEls = document.querySelector("li");
+    liEls.forEach((el) => {
+      el.addEventListener("click",function () {
+        if(this.style.textdecoration === "line-through")
+        this.style.textdecoration = "";
+        else this.style.textdecoration = "line-through";
+      });
+    });
+
+    const buttonEl = document.querySelector("button");
+    buttonEl.addEventListener("click", function () {
+      const liEl = document.querySelector("li");
+      liEl.innerText = "새로운 항목";
+
+      const ulEl = document.querySelector("ul");
+      ulEl.appendChild(liEl);
+    });
+
+    // 위임 버전
+
+  
+  </script>
+</body>
+</html>

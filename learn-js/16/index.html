@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+   <script defer src="./02.js"></script>
+</head>
+<body>
+  
+  <!-- lorem3 : 3단어로 구성된 랜덤 문장, 롬치고 커서올려 클릭 -->
+
+  <h1 id="title">hello</h1>
+  <h1 class="red">world</h1>
+  <h2 class="red">world</h2>
+  <p>Lorem, ipsum dolor.</p>
+  <script>
+// css에서 id는 고유해야 하는 이유 : 스타일 적용에는 문제가 없지만(다적용됨) 문서 객체 선택에 문제가 생김(하나만선택됨)
+    // ㄴ 오늘날 : querySelector(하나찾기), querySelectorAll(여러개찾기) 
+    // ㄴ css 선택자 문법을 그대로 쓸 수 있음 (대부분의 선택자 가능)
+    const el2 = document.querySelector("h1");
+    // const el3 = document.querySelector("#title");
+    // const el4 = document.querySelector("h1#title");
+    // const el5 = document.querySelectorAll(".red");
+    // const el6 = document.querySelectorAll("div > h1");
+    // 편리한데 퍼포먼스 꽝임, 편리하지만 내부 연산처리가 많아져 성능이 나빠질 수 있음 (직접 받는게 아니라 selector라는 매개변수로 받음)
+    // ㄴ 결론 : 그래도 오늘 날에는 그 나빠지는 성능 차이(get과의)가 미비하기 때문에 query를 쓰면 됨
+</script>
+  <!-- css에서 id는 고유해야 하는 이유 : 스타일 적용에는 문제가 없지만(다적용됨) 문서 객체 선택에 문제가 생김(하나만선택됨) -->
+
+<ul>
+
+</ul>
+
+
+</body>
+</html>
