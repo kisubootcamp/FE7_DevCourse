@@ -23,4 +23,4 @@
         ㄴ setTimeout <-> clearTimeout
         ㄴ setInterval <-> clearInterval
     
-*
+*z
