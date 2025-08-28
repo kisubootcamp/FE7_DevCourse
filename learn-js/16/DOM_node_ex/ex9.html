@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 9</title>
+  </head>
+  <body>
+    <div>관리자</div>
+    <div>사용자</div>
+    <div>게스트</div>
+    <script>
+      const div = document.querySelectorAll("div");
+      const arr = Array.from(div);
+      const result = arr.find((elm) => elm.innerText === "사용자");
+      console.log(result);
+    </script>
+  </body>
+</html>

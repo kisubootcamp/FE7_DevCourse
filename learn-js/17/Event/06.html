@@ -1,0 +1,41 @@
+<!--이벤트 위임-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>첫 번째 항목</li>
+      <li>두 번째 항목</li>
+    </ul>
+    <button>추가</button>
+    <script>
+      // 부모요소에 클릭 이벤트를 걸고 내부에서 발생하게 되면 그걸 캐치해서
+      // 태그네임을 체크하고 같은 게 맞으면 적절한 동작이 수행하게 한다
+      const ulEls = document.querySelector("ul");
+      ulEls.addEventListener("click", function (event) {
+        if (event.target.tagName === "LI") {
+          if (event.target.style.textDecoration === "line-through") {
+            event.target.style.textDecoration = "none";
+          } else {
+            event.target.style.textDecoration = "line-through";
+          }
+        }
+      });
+
+      // 새로운 요소 애들이 line-through가 걸리지 않는 이유는
+      // 당시 존재했던 애들만 렌더링이 되고, 새로 추가된 애들은 기존 코드에 영향X
+      const buttonEl = document.querySelector("button");
+      buttonEl.addEventListener("click", function () {
+        const liEl = document.createElement("li");
+        liEl.innerText = "새로운 항목";
+
+        const ulEl = document.querySelector("ul");
+        ulEl.appendChild(liEl);
+      });
+    </script>
+  </body>
+</html>
